@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Lista</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+   
+
+    <!-- import the webpage's javascript file -->
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body class="blue">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <form id="form" class="col s12 card ">
+                <div class="card-content blue-text">
+                    <span class="card-title">Registro en la lista</span>
+                    <div class="row">
+                        <br>
+                        <div class="input-field col s4">
+                            <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required>
+                            <label for="ApellidoPaterno">Apellido Paterno</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required>
+                            <label for="ApellidoMaterno">Apellido Materno</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="Nombre" name="Nombre" type="text" required>
+                            <label for="Nombre">Nombre/s</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="Nick" name="Nick" type="text" required>
+                            <label for="Nick">Nick</label>
+                            <!--Avatar: <input id="Avatar" name="Avatar" type="text" required />-->
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="Avatar" class="icons" required>
+                                <option value="" disabled selected>Escoge un avatar</option>
+                                <option value="1"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje1.png?raw=true"
+                                    class="left">1</option>
+                                <option value="2"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje1_H.png?raw=true"
+                                    class="left">2</option>
+                                <option value="3"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje2.png?raw=true"
+                                    class="left">3</option>
+                                <option value="4"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje2_H.png?raw=true"
+                                    class="left">4</option>
+                                <option value="5"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje3.png?raw=true"
+                                    class="left">5</option>
+                                <option value="6"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje3_H.png?raw=true"
+                                    class="left">6</option>
+                                <option value="7"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje4.png?raw=true"
+                                    class="left">7</option>
+                                <option value="8"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje4_H.png?raw=true"
+                                    class="left">8</option>
+                                <option value="9"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje5.png?raw=true"
+                                    class="left">9</option>
+                                <option value="10"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje5_H.png?raw=true"
+                                    class="left">10</option>
+                                <option value="11"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje6.png?raw=true"
+                                    class="left">11</option>
+                                <option value="12"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje6_H.png?raw=true"
+                                    class="left">12</option>
+                                <option value="13"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje7.png?raw=true"
+                                    class="left">13</option>
+                                <option value="14"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje7_H.png?raw=true"
+                                    class="left">14</option>
+                                <option value="15"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje8.png?raw=true"
+                                    class="left">15</option>
+                                <option value="16"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje8_H.png?raw=true"
+                                    class="left">16</option>
+                                <option value="17"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje9.png?raw=true"
+                                    class="left">17</option>
+                                <option value="18"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje9_H.png?raw=true"
+                                    class="left">18</option>
+                                <option value="19"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje10.png?raw=true"
+                                    class="left">19</option>
+                                <option value="20"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje10_H.png?raw=true"
+                                    class="left">20</option>
+                                <option value="0"
+                                    data-icon="https://github.com/marcoC76/RCC/blob/master/images/personaje0.png?raw=true"
+                                    class="left">0</option>
+                            </select>
+                            <label>Avatar</label>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="input-field col s4">
+                            <input id="Equipo" name="Equipo" type="text" required>
+                            <label for="Equipo">Clan</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <select id="Grupo" required onchange="grupo(this.value);">
+                                <option value="" disabled selected>Escoge un grupo</option>
+                                <option value="A">1°A</option>
+                                <option value="B">1°B</option>
+                                <option value="C">1°C</option>
+                                <option value="D">1°D</option>
+                                <option value="E">1°E</option>
+                                <option value="F">1°F</option>
+                                <option value="G">1°G</option>
+                                <option value="H">1°H</option>
+                            </select>
+                            <label for="Grupo">Grupo</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <input id="ID" name="ID" type="text" required focus>
+                            <label for="ID">ID</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Apunta y guarda bien este
+                                ID y
+                                mantenlo privado</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <br><br>
+                <center>
+                    <input class="btn btn-large blue" onclick="formSubmit();" type="button" value="Agregar" id="crear" />
+                    <div id="contenido"></div>
+                </center>
+                <br>
+            </form>
+
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var envioUrl,
+            ApellidoPaterno,
+            ApellidoMaterno,
+            Nombre,
+            Nick,
+            Avatar,
+            Equipo,
+            Grupo,
+            ID;
+
+        var array2 = [];
+        var cuenta;
+      
+      var numero = function () {
+                var cantidadNumeros = 90;
+                var myArray = []
+                while (myArray.length < cantidadNumeros) {
+                    var numeroAleatorio = Math.ceil(Math.random() * (cantidadNumeros * 100));
+
+                    var existe = false;
+
+                    for (var i = 0; i < myArray.length; i++) {
+                        if (myArray[i] == numeroAleatorio) {
+                            existe = true;
+                            break;
+                        }
+                    }
+
+                    if (!existe) {
+                        myArray[myArray.length] = numeroAleatorio;
+                    }
+
+                }
+                for (var i = 0; i < myArray.length; i++) {
+
+                    if (myArray[i] < 1000 & myArray[i] > 99) {
+                        //document.write("0" + myArray[i] + document.getElementById("Grupo").value + "<br>");
+                        array2.push("0" + myArray[i]);
+                    } else if (myArray[i] < 100 & myArray[i] > 9) {
+                        //document.write("00" + myArray[i] + document.getElementById("Grupo").value + "<br>");
+                        array2.push("00" + myArray[i]);
+                    } else if (myArray[i] < 10) {
+                        //document.write("000" + myArray[i] + document.getElementById("Grupo").value + "<br>");
+                        array2.push("000" + myArray[i]);
+                    } else {
+                        //document.write(myArray[i] + document.getElementById("Grupo").value + "<br>");
+                        array2.push(myArray[i]);
+                    }
+                }
+
+                console.table(array2);
+
+            }
+      var grupo = function (e) {
+                document.getElementById("ID").value = array2[cuenta] + e;
+            }
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+
+            // El ID generado aleatoreamente
+            cuenta = 0;
+            numero();
+            document.getElementById("ID").value = array2[cuenta];
+
+        });
+        //llamada a la función getValuesFromForm con los input's como argumentos
+
+        var myFunction = function () {
+            var url = "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
+
+            envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick + "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
+            console.log(envioUrl);
+        }
+
+        var limpiarContenido = function () {
+            document.getElementById("contenido").style.display = "none";
+        }
+
+        function formSubmit() {
+
+
+            if (document.getElementById("ApellidoPaterno").value === "" ||
+                document.getElementById("ApellidoMaterno").value === "" ||
+                document.getElementById("Nombre").value === "" ||
+                document.getElementById("Nick").value === "" ||
+                document.getElementById("Avatar").value === "" ||
+                document.getElementById("Equipo").value === "" ||
+                document.getElementById("Grupo").value === "" ||
+                document.getElementById("ID").value === "") {
+
+                alert("llena los campos");
+
+            } else {
+
+                ApellidoPaterno = document.getElementById("ApellidoPaterno").value;
+                ApellidoMaterno = document.getElementById("ApellidoMaterno").value;
+                Nombre = document.getElementById("Nombre").value;
+                Nick = document.getElementById("Nick").value;
+                Avatar = document.getElementById("Avatar").value;
+                Equipo = document.getElementById("Equipo").value;
+                Grupo = document.getElementById("Grupo").value;
+                ID = document.getElementById("ID").value;
+
+                myFunction();
+
+                var iframe = document.createElement('iframe');
+                var html = '';
+                iframe.src = envioUrl;
+                document.getElementById("contenido").appendChild(iframe);
+                setTimeout(limpiarContenido(), 3000);
+
+                cuenta = cuenta + 1;
+                limpiar();
+                document.getElementById("ID").value = array2[cuenta];
+                document.getElementById("ID").focus();
+
+            }
+            function limpiar() {
+                document.getElementById("form").reset();
+            }
+        }
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
