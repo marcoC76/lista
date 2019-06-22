@@ -6,12 +6,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- import the webpage's stylesheet -->
-   
-
-    <!-- import the webpage's javascript file -->
-   
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"
         type="text/css" />
 </head>
@@ -21,7 +15,6 @@
     <div class="container">
 
         <div class="row">
-
 
             <form id="form" class="col s12 card ">
                 <div class="card-content blue-text">
@@ -45,7 +38,6 @@
                         <div class="input-field col s6">
                             <input id="Nick" name="Nick" type="text" required>
                             <label for="Nick">Nick</label>
-                            <!--Avatar: <input id="Avatar" name="Avatar" type="text" required />-->
                         </div>
                         <div class="input-field col s6">
                             <select id="Avatar" class="icons" required>
@@ -117,6 +109,7 @@
                             <label>Avatar</label>
                         </div>
                     </div>
+                    
                     <div class="row">
 
                         <div class="input-field col s4">
@@ -147,23 +140,22 @@
                                 mantenlo privado</span>
                         </div>
                     </div>
-
-
                 </div>
-
-                <br><br>
+                <br>
+                <br>
                 <center>
-                    <input class="btn btn-large blue" onclick="formSubmit();" type="button" value="Agregar" id="crear" />
+                    <input class="btn btn-large blue" onclick="formSubmit();" type="button" value="Agregar"
+                        id="crear" />
                     <div id="contenido"></div>
                 </center>
                 <br>
             </form>
-
-
         </div>
+        <center>
+            <input class="btn btn-large white black-text" onclick="download()" type="button" value="Descargar"
+                id="descargar" />
+        </center>
     </div>
-
-
     <script type="text/javascript">
         var envioUrl,
             ApellidoPaterno,
@@ -177,66 +169,83 @@
 
         var array2 = [];
         var cuenta;
-      
-      var numero = function () {
-                var cantidadNumeros = 90;
-                var myArray = []
-                while (myArray.length < cantidadNumeros) {
-                    var numeroAleatorio = Math.ceil(Math.random() * (cantidadNumeros * 100));
+        var obj = {
+            items: []
+        };
 
-                    var existe = false;
+        var numero = function () {
+            var cantidadNumeros = 90;
+            var myArray = []
+            while (myArray.length < cantidadNumeros) {
+                var numeroAleatorio = Math.ceil(Math.random() * (cantidadNumeros * 100));
 
-                    for (var i = 0; i < myArray.length; i++) {
-                        if (myArray[i] == numeroAleatorio) {
-                            existe = true;
-                            break;
-                        }
-                    }
+                var existe = false;
 
-                    if (!existe) {
-                        myArray[myArray.length] = numeroAleatorio;
-                    }
-
-                }
                 for (var i = 0; i < myArray.length; i++) {
-
-                    if (myArray[i] < 1000 & myArray[i] > 99) {
-                        //document.write("0" + myArray[i] + document.getElementById("Grupo").value + "<br>");
-                        array2.push("0" + myArray[i]);
-                    } else if (myArray[i] < 100 & myArray[i] > 9) {
-                        //document.write("00" + myArray[i] + document.getElementById("Grupo").value + "<br>");
-                        array2.push("00" + myArray[i]);
-                    } else if (myArray[i] < 10) {
-                        //document.write("000" + myArray[i] + document.getElementById("Grupo").value + "<br>");
-                        array2.push("000" + myArray[i]);
-                    } else {
-                        //document.write(myArray[i] + document.getElementById("Grupo").value + "<br>");
-                        array2.push(myArray[i]);
+                    if (myArray[i] == numeroAleatorio) {
+                        existe = true;
+                        break;
                     }
                 }
 
-                console.table(array2);
+                if (!existe) {
+                    myArray[myArray.length] = numeroAleatorio;
+                }
 
             }
-      var grupo = function (e) {
-                document.getElementById("ID").value = array2[cuenta] + e;
+            for (var i = 0; i < myArray.length; i++) {
+
+                if (myArray[i] < 1000 & myArray[i] > 99) {
+
+                    array2.push("0" + myArray[i]);
+                } else if (myArray[i] < 100 & myArray[i] > 9) {
+
+                    array2.push("00" + myArray[i]);
+                } else if (myArray[i] < 10) {
+
+                    array2.push("000" + myArray[i]);
+                } else {
+
+                    array2.push(myArray[i]);
+                }
             }
+
+            console.table(array2);
+
+        }
+        var grupo = function (e) {
+            document.getElementById("ID").value = array2[cuenta] + e;
+        }
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
 
-            // El ID generado aleatoreamente
             cuenta = 0;
             numero();
             document.getElementById("ID").value = array2[cuenta];
+            if (navigator.onLine) {
+                document.getElementById("descargar").style.display = "none";
+            } else {
+                document.getElementById("descargar").style.display = "inLine";
+            }
 
         });
-        //llamada a la función getValuesFromForm con los input's como argumentos
 
-        var myFunction = function () {
+        var enviarDatos = function () {
             var url = "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
 
             envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick + "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
-            console.log(envioUrl);
+            var obj1 = {
+                "ApellidoPaterno": ApellidoPaterno,
+                "ApellidoMaterno": ApellidoMaterno,
+                "Nombre": Nombre,
+                "Nick": Nick,
+                "Avatar": Avatar,
+                "Equipo": Equipo,
+                "Grupo": Grupo,
+                "ID": ID
+            };
+            obj.items.push(obj1);
+
         }
 
         var limpiarContenido = function () {
@@ -244,7 +253,6 @@
         }
 
         function formSubmit() {
-
 
             if (document.getElementById("ApellidoPaterno").value === "" ||
                 document.getElementById("ApellidoMaterno").value === "" ||
@@ -267,31 +275,106 @@
                 Equipo = document.getElementById("Equipo").value;
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
-
-                myFunction();
-
+                enviarDatos();
                 var iframe = document.createElement('iframe');
                 var html = '';
                 iframe.src = envioUrl;
                 document.getElementById("contenido").appendChild(iframe);
                 setTimeout(limpiarContenido(), 3000);
-
                 cuenta = cuenta + 1;
                 limpiar();
                 document.getElementById("ID").value = array2[cuenta];
                 document.getElementById("ID").focus();
-
             }
+
             function limpiar() {
                 document.getElementById("form").reset();
             }
         }
 
+        function convertToCSV(objArray) {
+            var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+            var str = '';
 
+            for (var i = 0; i < array.length; i++) {
+                var line = '';
+                for (var index in array[i]) {
+                    if (line != '') line += ','
 
+                    line += array[i][index];
+                }
 
+                str += line + '\r\n';
+            }
+
+            return str;
+        }
+
+        function exportCSVFile(headers, items, fileTitle) {
+            if (headers) {
+                items.unshift(headers);
+            }
+
+            var jsonObject = JSON.stringify(items);
+
+            var csv = this.convertToCSV(jsonObject);
+
+            var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
+
+            var blob = new Blob([csv], {
+                type: 'text/csv;charset=utf-8;'
+            });
+            if (navigator.msSaveBlob) {
+                navigator.msSaveBlob(blob, exportedFilenmae);
+            } else {
+                var link = document.createElement("a");
+                if (link.download !== undefined) {
+                    var url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", exportedFilenmae);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            }
+        }
+
+        function download() {
+            var headers = {
+                ApellidoPaterno: 'Apellido Paterno',
+
+                ApellidoMaterno: "Apellido Materno",
+                Nombre: "Nombre",
+                Nick: "Nick",
+                Avatar: "Avatar",
+                Equipo: "Equipo",
+                Grupo: "Grupo",
+                ID: "ID"
+
+            };
+
+            itemsNotFormatted = obj.items;
+            var itemsFormatted = [];
+
+            itemsNotFormatted.forEach((item) => {
+                itemsFormatted.push({
+                    ApellidoPaterno: item.ApellidoPaterno,
+                    ApellidoMaterno: item.ApellidoMaterno,
+                    Nombre: item.Nombre,
+                    Nick: item.Nick,
+                    Avatar: item.Avatar,
+                    Equipo: item.Equipo,
+                    Grupo: item.Grupo,
+                    ID: item.ID
+                });
+            });
+            var fileTitle = 'lista';
+            exportCSVFile(headers, itemsFormatted, fileTitle);
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js.js"></script>
 </body>
 
 </html>
