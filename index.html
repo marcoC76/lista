@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="materialize.min.css" rel="stylesheet"
-        type="text/css" />
+    <link href="materialize.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="blue">
@@ -21,25 +20,25 @@
                     <span class="card-title">Registro en la lista</span>
                     <div class="row">
                         <br>
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required>
                             <label for="ApellidoPaterno">Apellido Paterno</label>
                         </div>
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required>
                             <label for="ApellidoMaterno">Apellido Materno</label>
                         </div>
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <input id="Nombre" name="Nombre" type="text" required>
                             <label for="Nombre">Nombre/s</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input id="Nick" name="Nick" type="text" required>
                             <label for="Nick">Nick</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <select id="Avatar" class="icons" required>
                                 <option value="" disabled selected>Escoge un avatar</option>
                                 <option value="1"
@@ -109,15 +108,15 @@
                             <label>Avatar</label>
                         </div>
                     </div>
-                    
+
                     <div class="row">
 
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <input id="Equipo" name="Equipo" type="text" required>
                             <label for="Equipo">Clan</label>
                         </div>
 
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <select id="Grupo" required onchange="grupo(this.value);">
                                 <option value="" disabled selected>Escoge un grupo</option>
                                 <option value="A">1°A</option>
@@ -132,7 +131,7 @@
                             <label for="Grupo">Grupo</label>
                         </div>
 
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m4">
                             <input id="ID" name="ID" type="text" required focus>
                             <label for="ID">ID</label>
                             <span class="helper-text" data-error="wrong" data-success="right">Apunta y guarda bien este
@@ -169,9 +168,34 @@
 
         var array2 = [];
         var cuenta;
+
         var obj = {
             items: []
         };
+
+        var obj2
+
+        var appi =
+            "https://script.google.com/macros/s/AKfycby1CPhELrfHH6j9okZMxOtT6Q_EJPfNNL2fFpDd0A/exec";
+        ft(appi);
+
+        function ft(appi) {
+
+            fetch(appi)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    obj2 = data;
+
+                    console.log(obj);
+
+                })
+                .catch(function (err) {
+                    console.error(err);
+                });
+
+        }
 
         var numero = function () {
             var cantidadNumeros = 90;
@@ -214,7 +238,13 @@
 
         }
         var grupo = function (e) {
-            document.getElementById("ID").value = array2[cuenta] + e;
+            obj2.forEach(element => {
+                if (element.ID.substring(0,4) == array2[cuenta]) {
+                    document.getElementById("ID").value = array2[cuenta + 1] + e;
+                } else {
+                    document.getElementById("ID").value = array2[cuenta] + e;
+                }
+            });
         }
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
@@ -231,9 +261,11 @@
         });
 
         var enviarDatos = function () {
-            var url = "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
+            var url =
+                "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
 
-            envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick + "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
+            envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
+                "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
             var obj1 = {
                 "ApellidoPaterno": ApellidoPaterno,
                 "ApellidoMaterno": ApellidoMaterno,
