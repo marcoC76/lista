@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <select id="Grupo" required onchange="grupo(this.value);" >
+                            <select id="Grupo" required onchange="grupo(this.value)">
                                 <option value="" disabled selected>Escoge un grupo</option>
                                 <option value="A">1°A</option>
                                 <option value="B">1°B</option>
@@ -240,15 +240,9 @@
             console.table(array2);
 
         }
-        
+
         var grupo = function (e) {
-            obj2.forEach(element => {
-                if (element.ID.substring(0,4) == array2[cuenta]) {
-                    document.getElementById("ID").value = array2[cuenta + 1] + e;
-                } else {
-                    document.getElementById("ID").value = array2[cuenta] + e;
-                }
-            });
+            document.getElementById("ID").value = array2[cuenta] + e;
         }
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
@@ -413,22 +407,22 @@
     <script src="js.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-          console.log("El Navegador admite service workers");
-          window.addEventListener('load', function () {
-            //navigator.serviceWorker.register('sw_offlinepage.js')
-            //navigator.serviceWorker.register('sw_offlinesite.js')
-            navigator.serviceWorker.register('sw.js')
-    
-              .then(function (registration) {
-                console.log('Service worker registrado de modo correcto');
-                console.log('Scope: ' + registration.scope)
-              }, function (error) {
-                console.log('El registro del Service worker ha fallado');
-                console.log(error)
-              });
-          });
+            console.log("El Navegador admite service workers");
+            window.addEventListener('load', function () {
+                //navigator.serviceWorker.register('sw_offlinepage.js')
+                //navigator.serviceWorker.register('sw_offlinesite.js')
+                navigator.serviceWorker.register('sw.js')
+
+                    .then(function (registration) {
+                        console.log('Service worker registrado de modo correcto');
+                        console.log('Scope: ' + registration.scope)
+                    }, function (error) {
+                        console.log('El registro del Service worker ha fallado');
+                        console.log(error)
+                    });
+            });
         }
-      </script>
+    </script>
 </body>
 
 </html>
