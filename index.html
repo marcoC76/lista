@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <select id="Grupo" required onchange="grupo(this.value);">
+                            <select id="Grupo" required onchange="grupo(this.value);" >
                                 <option value="" disabled selected>Escoge un grupo</option>
                                 <option value="A">1°A</option>
                                 <option value="B">1°B</option>
@@ -240,6 +240,7 @@
             console.table(array2);
 
         }
+        
         var grupo = function (e) {
             obj2.forEach(element => {
                 if (element.ID.substring(0,4) == array2[cuenta]) {
