@@ -5,26 +5,86 @@
     <title>Lista</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta 
-     name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link href="materialize.min.css" rel="stylesheet" type="text/css" />
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2196f3">
     <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        html {
+
+            background: linear-gradient(145deg, #1e87db, #23a1ff);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .neumor {
+            border-radius: 33px;
+            background: linear-gradient(145deg,  #23a1ff, #1e87db);
+            box-shadow: -18px -18px 36px #186caf,
+                18px 18px 36px #2ac0ff;
+        }
+
+
+        .boton {
+            border-radius: 33px;
+            background: linear-gradient(145deg,  #23a1ff, #1e87db);
+            box-shadow: -5px -5px 10px #186caf,
+                5px 5px 10px #2ac0ff;
+
+        }
+
+        .boton:hover {
+            background: linear-gradient(145deg, #1e87db, #23a1ff);
+            box-shadow: inset -8px -8px 16px #186caf,
+                inset 8px 8px 16px #2ac0ff;
+
+        }
+
+        .input-field.col label {
+            color: white;
+        }
+
+        .input-field .helper-text {
+            color: white;
+        }
+
+        input[type=text]:not(.browser-default) {
+            border-bottom: 1px solid #ffffff;
+        }
+
+        input[type=text]:not(.browser-default):focus:not([readonly]) {
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 1px 0 0 #fff;
+        }
+
+        .select-wrapper input.select-dropdown {
+            color: white;
+        }
+
+        #ID {
+            color: rgb(167, 6, 6);
+        }
+    </style>
 </head>
 
-<body class="blue">
+<body>
+    <br>
 
     <div class="container">
 
         <div class="row">
 
-            <form id="form" class="col s12 card ">
-                <div class="card-content blue-text">
-                    <span class="card-title">Registro en la lista</span>
+            <form id="form" class="col s12 card neumor white-text">
+                <div class="card-content white-text">
+                    <center>
+                        <h5 style="text-transform: uppercase;">Registro en la lista</h5>
+                    </center>
                     <div class="row">
-                        <br>
                         <div class="input-field col s12 m4">
                             <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required>
                             <label for="ApellidoPaterno">Apellido Paterno</label>
@@ -145,20 +205,18 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
                 <center>
-                    <input class="btn btn-large blue" onclick="formSubmit();" type="button" value="Agregar"
+                    <input class="btn btn-large boton" onclick="formSubmit();" type="button" value="Agregar"
                         id="crear" />
                     <div id="contenido"></div>
                 </center>
                 <br>
             </form>
         </div>
-        <center>
+        <!--  <center>
             <input class="btn btn-large white black-text" onclick="download()" type="button" value="Descargar"
                 id="descargar" />
-        </center>
+        </center> -->
     </div>
 
     <script type="text/javascript">
@@ -321,7 +379,7 @@
             }
 
             function limpiar() {
-                alert("Haz sido registrado en la lista, tu ID es: "+ID);
+                alert("Haz sido registrado en la lista, tu ID es: " + ID);
                 document.getElementById("form").reset();
             }
         }
