@@ -8,12 +8,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link href="materialize.min.css" rel="stylesheet" type="text/css" />
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#2c2b2b">
     <link rel="icon" type="image/png" href="icon.png">
     <style>
         html {
 
-            background: #2196f3;
+            background:#2c2b2b;
         }
 
         body {
@@ -22,24 +22,24 @@
 
         .neumor {
             border-radius: 33px;
-            background: linear-gradient(145deg,  #23a1ff, #1e87db);
-            box-shadow: -18px -18px 36px #186caf,
-                18px 18px 36px #2ac0ff;
+            background: linear-gradient(145deg,  #2f2e2e, #282727);
+            box-shadow: -18px -18px 36px #252525,
+                18px 18px 36px #333131;
         }
 
 
         .boton {
             border-radius: 33px;
-            background: linear-gradient(145deg,  #23a1ff, #1e87db);
-            box-shadow: -5px -5px 10px #186caf,
-                5px 5px 10px #2ac0ff;
+            background: linear-gradient(145deg,  #2f2e2e, #282727);
+            box-shadow: -5px -5px 10px #252525,
+                5px 5px 10px #333131;
 
         }
 
         .boton:hover {
-            background: linear-gradient(145deg, #1e87db, #23a1ff);
-            box-shadow: inset -8px -8px 16px #186caf,
-                inset 8px 8px 16px #2ac0ff;
+            background: linear-gradient(145deg, #282727, #2f2e2e);
+            box-shadow: inset -8px -8px 16px #252525,
+                inset 8px 8px 16px #333131;
 
         }
 
@@ -59,13 +59,16 @@
             border-bottom: 1px solid #ffffff;
             box-shadow: 0 1px 0 0 #fff;
         }
-
+        input[type=text]:not(.browser-default){
+            color: white;
+        }
         .select-wrapper input.select-dropdown {
             color: white;
         }
 
         #ID {
-            color: rgb(167, 6, 6);
+            color: rgb(2, 121, 22);
+            font-size: 2.5em;
         }
     </style>
 </head>
@@ -100,6 +103,7 @@
                         <div class="input-field col s12 m6">
                             <input id="Nick" name="Nick" type="text" required>
                             <label for="Nick">Nick</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de usuario o apodo que te identifique</span>
                         </div>
                         <div class="input-field col s12 m6">
                             <select id="Avatar" class="icons" required>
@@ -177,19 +181,17 @@
                         <div class="input-field col s12 m4">
                             <input id="Equipo" name="Equipo" type="text" required>
                             <label for="Equipo">Clan</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">El nombre de tu equipo</span>
                         </div>
 
                         <div class="input-field col s12 m4">
                             <select id="Grupo" required onchange="grupo(this.value)">
                                 <option value="" disabled selected>Escoge un grupo</option>
-                                <option value="A">1°A</option>
-                                <option value="B">1°B</option>
-                                <option value="C">1°C</option>
-                                <option value="D">1°D</option>
-                                <option value="E">1°E</option>
-                                <option value="F">1°F</option>
-                                <option value="G">1°G</option>
-                                <option value="H">1°H</option>
+                                <option value="A">4°A Rad</option>
+                                <option value="B">4°B Rad</option>
+                                <option value="C">4°C Rad</option>
+                                <option value="D">4°B Enf</option>
+                                
                             </select>
                             <label for="Grupo">Grupo</label>
                         </div>
@@ -309,11 +311,11 @@
             cuenta = 0;
             numero();
             document.getElementById("ID").value = array2[cuenta];
-            if (navigator.onLine) {
+          /*   if (navigator.onLine) {
                 document.getElementById("descargar").style.display = "none";
             } else {
                 document.getElementById("descargar").style.display = "inLine";
-            }
+            } */
 
         });
 
@@ -377,7 +379,7 @@
             }
 
             function limpiar() {
-                alert("Haz sido registrado en la lista, tu ID es: " + ID);
+                alert("Haz sido registrado en la lista "+Nombre+", tu ID es: " + ID);
                 document.getElementById("form").reset();
             }
         }
