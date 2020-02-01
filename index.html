@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" href="icon.png">
     <style>
         html {
-
-            background:#2c2b2b;
+            background: linear-gradient(145deg, #121212, #0f0f0f);
+            /* background: #111111; */
         }
 
         body {
@@ -22,24 +22,24 @@
 
         .neumor {
             border-radius: 33px;
-            background: linear-gradient(145deg,  #2f2e2e, #282727);
-            box-shadow: -18px -18px 36px #252525,
-                18px 18px 36px #333131;
+            background: linear-gradient(315deg, #0f0f0f, #121212);
+            box-shadow: -12px -12px 23px #080808,
+                12px 12px 23px #1a1a1a;
         }
 
 
         .boton {
             border-radius: 33px;
-            background: linear-gradient(145deg,  #2f2e2e, #282727);
-            box-shadow: -5px -5px 10px #252525,
-                5px 5px 10px #333131;
+            background: linear-gradient(315deg, #0f0f0f, #121212);
+            box-shadow: -12px -12px 23px #080808,
+                12px 12px 23px #1a1a1a;
 
         }
 
         .boton:hover {
-            background: linear-gradient(145deg, #282727, #2f2e2e);
-            box-shadow: inset -8px -8px 16px #252525,
-                inset 8px 8px 16px #333131;
+            background: linear-gradient(145deg, #121212, #0f0f0f);
+            box-shadow: inset -8px -8px 16px #080808,
+                inset 8px 8px 16px #1a1a1a;
 
         }
 
@@ -59,9 +59,11 @@
             border-bottom: 1px solid #ffffff;
             box-shadow: 0 1px 0 0 #fff;
         }
-        input[type=text]:not(.browser-default){
+
+        input[type=text]:not(.browser-default) {
             color: white;
         }
+
         .select-wrapper input.select-dropdown {
             color: white;
         }
@@ -103,7 +105,8 @@
                         <div class="input-field col s12 m6">
                             <input id="Nick" name="Nick" type="text" required>
                             <label for="Nick">Nick</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de usuario o apodo que te identifique</span>
+                            <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de
+                                usuario o apodo que te identifique</span>
                         </div>
                         <div class="input-field col s12 m6">
                             <select id="Avatar" class="icons" required>
@@ -181,7 +184,8 @@
                         <div class="input-field col s12 m4">
                             <input id="Equipo" name="Equipo" type="text" required>
                             <label for="Equipo">Clan</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">El nombre de tu equipo</span>
+                            <span class="helper-text" data-error="wrong" data-success="right">El nombre de tu
+                                equipo</span>
                         </div>
 
                         <div class="input-field col s12 m4">
@@ -191,7 +195,7 @@
                                 <option value="B">4°B Rad</option>
                                 <option value="C">4°C Rad</option>
                                 <option value="D">4°B Enf</option>
-                                
+
                             </select>
                             <label for="Grupo">Grupo</label>
                         </div>
@@ -311,11 +315,11 @@
             cuenta = 0;
             numero();
             document.getElementById("ID").value = array2[cuenta];
-          /*   if (navigator.onLine) {
-                document.getElementById("descargar").style.display = "none";
-            } else {
-                document.getElementById("descargar").style.display = "inLine";
-            } */
+            /*   if (navigator.onLine) {
+                  document.getElementById("descargar").style.display = "none";
+              } else {
+                  document.getElementById("descargar").style.display = "inLine";
+              } */
 
         });
 
@@ -379,7 +383,7 @@
             }
 
             function limpiar() {
-                alert("Haz sido registrado en la lista "+Nombre+", tu ID es: " + ID);
+                alert("Haz sido registrado en la lista " + Nombre + ", tu ID es: " + ID);
                 document.getElementById("form").reset();
             }
         }
