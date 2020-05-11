@@ -8,13 +8,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link href="materialize.min.css" rel="stylesheet" type="text/css" />
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2c2b2b">
+    <meta name="theme-color" content="#0073ad">
     <link rel="icon" type="image/png" href="icon.png">
     <style>
         html {
             /*  background: linear-gradient(315deg, #121212, #151515); */
             background: linear-gradient(315deg, #0073ad, #0089cd);
-           background-position: center;
+            background-position: center;
             background-size: 1000vw;
             /* background: #111111; */
         }
@@ -33,18 +33,31 @@
 
         .boton {
             border-radius: 33px;
-            background: linear-gradient(315deg, #0089cd, #0073ad);
+            background: linear-gradient(315deg, #0073ad, #920202);
             box-shadow: -12px -12px 24px #005b88,
                 12px 12px 24px #00a5f8;
             color: #ffffff;
             font-weight: bolder;
             font-size: 1.2em;
+
         }
 
         .boton:hover {
-            background: #0080c0;
-            box-shadow: inset -12px -12px 24px #005b88,
-                inset 12px 12px 24px #00a5f8;
+            background: linear-gradient(315deg, #0073ad, #920202);
+            box-shadow: inset -12px -12px 24px #00000027,
+                inset 12px 12px 24px #1414142c;
+            transition: 1s ease-in-out;
+        }
+        .inf{
+            background: #01547e;
+            border-radius: 10px;
+            font-weight: bolder;
+            padding-left: 5%;
+            padding-right: 5%;
+            box-shadow: inset -30px -30px 60px #0073ad, 
+            inset 30px 30px 60px #0089cd;
+            color:#c2eaf1;
+            
         }
 
         .input-field.col label {
@@ -91,25 +104,25 @@
                     <center>
                         <h5 style="text-transform: uppercase;">Registro en la lista</h5>
                     </center>
-                        <h2>Se terminó el registro</h2>
-                   <!-- <div class="row">
+                    <!-- <h2>Se terminó el registro</h2> -->
+                    <div class="row">
                         <div class="input-field col s12 m4">
-                            <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required>
+                            <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required autocomplete="off">
                             <label for="ApellidoPaterno">Apellido Paterno</label>
                         </div>
                         <div class="input-field col s12 m4">
-                            <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required>
+                            <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required autocomplete="off">
                             <label for="ApellidoMaterno">Apellido Materno</label>
                         </div>
                         <div class="input-field col s12 m4">
-                            <input id="Nombre" name="Nombre" type="text" required>
+                            <input id="Nombre" name="Nombre" type="text" required autocomplete="off">
                             <label for="Nombre">Nombre/s</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <input id="Nick" name="Nick" type="text" required>
-                            <label for="Nick">Nick</label>
+                            <input id="Nick" name="Nick" type="text" required autocomplete="off">
+                            <label for="Nick">Nombre de Usuario</label>
                             <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de
                                 usuario o apodo que te identifique</span>
                         </div>
@@ -187,7 +200,9 @@
                     <div class="row">
 
                         <div class="input-field col s12 m4">
-                            <input id="Equipo" name="Equipo" type="text" required>
+                            <select id="Equipo" name="Equipo" required>
+                                <option value="" disabled selected>Escoge un nombre</option>
+                            </select>
                             <label for="Equipo">Clan</label>
                             <span class="helper-text" data-error="wrong" data-success="right">El nombre de tu
                                 equipo</span>
@@ -206,7 +221,7 @@
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <input id="ID" name="ID" type="text" required focus>
+                            <input id="ID" name="ID" type="text" disabled focus autocomplete="off">
                             <label for="ID">ID</label>
                             <span class="helper-text" data-error="wrong" data-success="right">Apunta y guarda bien este
                                 ID y
@@ -219,7 +234,7 @@
                         id="crear" />
                     <div id="contenido"></div>
                 </center>
-                <br> -->
+                <br>
             </form>
         </div>
         <!--  <center>
@@ -315,6 +330,7 @@
             document.getElementById("ID").value = array2[cuenta] + e;
         }
         document.addEventListener('DOMContentLoaded', function () {
+            PopulateDropDownList()
             M.AutoInit();
 
             cuenta = 0;
@@ -389,7 +405,19 @@
 
             function limpiar() {
                 alert("Haz sido registrado en la lista " + Nombre + ", tu ID es: " + ID);
-                document.getElementById("form").reset();
+                /* document.getElementById("form").reset(); */
+                var salida = `
+                                <br>
+                                <center>
+                                    <h3 style="text-transform: uppercase; font-weight:bolder;">Te has registrado con exito</h3> 
+                                    <br>
+                                   <h4> Haz sido registrado en la lista <b>${Nombre}</b> <br><br> Tu Nombre de Usuario es: <span class="inf">${Nick}</span> <br><br> Tu ID es: <span class="inf">${ID}</span><br><br> Tu Clan es: <span class="inf">${Equipo}</span></h4>
+                                   <br> <br>
+                                   <input class="btn btn-large boton" onclick="location.reload()" type="button" value="Nuevo registro" id="nuevo" />
+                                </center>
+                                <br>
+                            `;
+                document.getElementById("form").innerHTML = salida;
             }
         }
 
@@ -492,6 +520,756 @@
                         console.log(error)
                     });
             });
+        }
+
+        function PopulateDropDownList() {
+            //Build an array containing Customer records.
+            var Clanes = [{
+                    "Nombre": "Abadejo"
+                },
+                {
+                    "Nombre": "Abeja"
+                },
+                {
+                    "Nombre": "Abejorro"
+                },
+                {
+                    "Nombre": "Abulón"
+                },
+                {
+                    "Nombre": "Acocil"
+                },
+                {
+                    "Nombre": "Águila"
+                },
+                {
+                    "Nombre": "Ajolote"
+                },
+                {
+                    "Nombre": "Alacrán"
+                },
+                {
+                    "Nombre": "Albatros"
+                },
+                {
+                    "Nombre": "Alcatraz"
+                },
+                {
+                    "Nombre": "Alce"
+                },
+                {
+                    "Nombre": "Almeja"
+                },
+                {
+                    "Nombre": "Alondra "
+                },
+                {
+                    "Nombre": "Alpaca"
+                },
+                {
+                    "Nombre": "Anaconda"
+                },
+                {
+                    "Nombre": "Anchoa "
+                },
+                {
+                    "Nombre": "Angelote"
+                },
+                {
+                    "Nombre": "Anguila"
+                },
+                {
+                    "Nombre": "Antílope"
+                },
+                {
+                    "Nombre": "Araña"
+                },
+                {
+                    "Nombre": "Ardilla"
+                },
+                {
+                    "Nombre": "Armadillo"
+                },
+                {
+                    "Nombre": "Armiño"
+                },
+                {
+                    "Nombre": "Arpia"
+                },
+                {
+                    "Nombre": "Asno"
+                },
+                {
+                    "Nombre": "Atún"
+                },
+                {
+                    "Nombre": "Avestruz"
+                },
+                {
+                    "Nombre": "Avispa"
+                },
+                {
+                    "Nombre": "Avispón"
+                },
+                {
+                    "Nombre": "Axolote"
+                },
+                {
+                    "Nombre": "Babuino"
+                },
+                {
+                    "Nombre": "Bacalao"
+                },
+                {
+                    "Nombre": "Ballena"
+                },
+                {
+                    "Nombre": "Bandicoot"
+                },
+                {
+                    "Nombre": "Barracuda"
+                },
+                {
+                    "Nombre": "Basilico"
+                },
+                {
+                    "Nombre": "Beluga"
+                },
+                {
+                    "Nombre": "Bisonte"
+                },
+                {
+                    "Nombre": "Boa"
+                },
+                {
+                    "Nombre": "Bonobo"
+                },
+                {
+                    "Nombre": "Buey"
+                },
+                {
+                    "Nombre": "Búfalo "
+                },
+                {
+                    "Nombre": "Búho"
+                },
+                {
+                    "Nombre": "Buitre"
+                },
+                {
+                    "Nombre": "Burro"
+                },
+                {
+                    "Nombre": "Caballo"
+                },
+                {
+                    "Nombre": "Cabra"
+                },
+                {
+                    "Nombre": "Cacatúa"
+                },
+                {
+                    "Nombre": "Cachalote"
+                },
+                {
+                    "Nombre": "Caimán"
+                },
+                {
+                    "Nombre": "Calamar"
+                },
+                {
+                    "Nombre": "Camaleón"
+                },
+                {
+                    "Nombre": "Camello"
+                },
+                {
+                    "Nombre": "Canario"
+                },
+                {
+                    "Nombre": "Cangrejo"
+                },
+                {
+                    "Nombre": "Canguro"
+                },
+                {
+                    "Nombre": "Capibara"
+                },
+                {
+                    "Nombre": "Caracol"
+                },
+                {
+                    "Nombre": "Caribú"
+                },
+                {
+                    "Nombre": "Castor"
+                },
+                {
+                    "Nombre": "Cebra"
+                },
+                {
+                    "Nombre": "Centauro"
+                },
+                {
+                    "Nombre": "Cerbero"
+                },
+                {
+                    "Nombre": "Cerdo"
+                },
+                {
+                    "Nombre": "Chacal"
+                },
+                {
+                    "Nombre": "Chimpancé"
+                },
+                {
+                    "Nombre": "Chinche"
+                },
+                {
+                    "Nombre": "Chinchilla"
+                },
+                {
+                    "Nombre": "Ciempiés"
+                },
+                {
+                    "Nombre": "Ciervo"
+                },
+                {
+                    "Nombre": "Cigarra"
+                },
+                {
+                    "Nombre": "Cigüeña"
+                },
+                {
+                    "Nombre": "Cisne"
+                },
+                {
+                    "Nombre": "Cóatl"
+                },
+                {
+                    "Nombre": "Cobra"
+                },
+                {
+                    "Nombre": "Cocodrilo"
+                },
+                {
+                    "Nombre": "Colibrí"
+                },
+                {
+                    "Nombre": "Comadreja"
+                },
+                {
+                    "Nombre": "Cóndor"
+                },
+                {
+                    "Nombre": "Conejo"
+                },
+                {
+                    "Nombre": "Coyote"
+                },
+                {
+                    "Nombre": "Cucaracha"
+                },
+                {
+                    "Nombre": "Cuervo"
+                },
+                {
+                    "Nombre": "Culebra"
+                },
+                {
+                    "Nombre": "Delfín"
+                },
+                {
+                    "Nombre": "Dingo"
+                },
+                {
+                    "Nombre": "Dinosaurio"
+                },
+                {
+                    "Nombre": "Dodo"
+                },
+                {
+                    "Nombre": "Dragón"
+                },
+                {
+                    "Nombre": "Duende"
+                },
+                {
+                    "Nombre": "Elefante"
+                },
+                {
+                    "Nombre": "Erizo"
+                },
+                {
+                    "Nombre": "Escarabajo"
+                },
+                {
+                    "Nombre": "Escorpión"
+                },
+                {
+                    "Nombre": "Esfinge"
+                },
+                {
+                    "Nombre": "Faisán"
+                },
+                {
+                    "Nombre": "Fauno"
+                },
+                {
+                    "Nombre": "Fénix"
+                },
+                {
+                    "Nombre": "Foca"
+                },
+                {
+                    "Nombre": "Gacela"
+                },
+                {
+                    "Nombre": "Gallina"
+                },
+                {
+                    "Nombre": "Gallo "
+                },
+                {
+                    "Nombre": "Ganso"
+                },
+                {
+                    "Nombre": "Garrapata"
+                },
+                {
+                    "Nombre": "Garza"
+                },
+                {
+                    "Nombre": "Gato"
+                },
+                {
+                    "Nombre": "Gavilán"
+                },
+                {
+                    "Nombre": "Gaviota"
+                },
+                {
+                    "Nombre": "Gecko"
+                },
+                {
+                    "Nombre": "Gnomo"
+                },
+                {
+                    "Nombre": "Goblin"
+                },
+                {
+                    "Nombre": "Golem"
+                },
+                {
+                    "Nombre": "Gorila"
+                },
+                {
+                    "Nombre": "Grifo"
+                },
+                {
+                    "Nombre": "Grulla"
+                },
+                {
+                    "Nombre": "Guajolote"
+                },
+                {
+                    "Nombre": "Guepardo"
+                },
+                {
+                    "Nombre": "Halcón"
+                },
+                {
+                    "Nombre": "Hidra"
+                },
+                {
+                    "Nombre": "Hiena"
+                },
+                {
+                    "Nombre": "Hipocampo"
+                },
+                {
+                    "Nombre": "Hipogrifo"
+                },
+                {
+                    "Nombre": "Hipopótamo"
+                },
+                {
+                    "Nombre": "Hormiga"
+                },
+                {
+                    "Nombre": "Hurón"
+                },
+                {
+                    "Nombre": "Iguana"
+                },
+                {
+                    "Nombre": "Impala"
+                },
+                {
+                    "Nombre": "Jabalí"
+                },
+                {
+                    "Nombre": "Jaguar"
+                },
+                {
+                    "Nombre": "Jirafa"
+                },
+                {
+                    "Nombre": "Kiwi"
+                },
+                {
+                    "Nombre": "Koala"
+                },
+                {
+                    "Nombre": "Kraken"
+                },
+                {
+                    "Nombre": "Lagartija"
+                },
+                {
+                    "Nombre": "Lagarto"
+                },
+                {
+                    "Nombre": "Lechuza"
+                },
+                {
+                    "Nombre": "Lémur"
+                },
+                {
+                    "Nombre": "León"
+                },
+                {
+                    "Nombre": "Leopardo"
+                },
+                {
+                    "Nombre": "Leviatan"
+                },
+                {
+                    "Nombre": "Leviatán"
+                },
+                {
+                    "Nombre": "Libélula"
+                },
+                {
+                    "Nombre": "Licántropo"
+                },
+                {
+                    "Nombre": "Liebre"
+                },
+                {
+                    "Nombre": "Lince"
+                },
+                {
+                    "Nombre": "Llama"
+                },
+                {
+                    "Nombre": "Lobo"
+                },
+                {
+                    "Nombre": "Lombriz"
+                },
+                {
+                    "Nombre": "Loro"
+                },
+                {
+                    "Nombre": "Luciérnaga"
+                },
+                {
+                    "Nombre": "Mamut"
+                },
+                {
+                    "Nombre": "Manatí"
+                },
+                {
+                    "Nombre": "Mandril"
+                },
+                {
+                    "Nombre": "Mangosta"
+                },
+                {
+                    "Nombre": "Mantícora"
+                },
+                {
+                    "Nombre": "Mantis "
+                },
+                {
+                    "Nombre": "Mapache"
+                },
+                {
+                    "Nombre": "Mariposa"
+                },
+                {
+                    "Nombre": "Marmota"
+                },
+                {
+                    "Nombre": "Marsopa"
+                },
+                {
+                    "Nombre": "Medusa"
+                },
+                {
+                    "Nombre": "Milpiés"
+                },
+                {
+                    "Nombre": "Minotauro"
+                },
+                {
+                    "Nombre": "Mirlo"
+                },
+                {
+                    "Nombre": "Mono"
+                },
+                {
+                    "Nombre": "Mosca"
+                },
+                {
+                    "Nombre": "Mosquito"
+                },
+                {
+                    "Nombre": "Mula"
+                },
+                {
+                    "Nombre": "Murciélago"
+                },
+                {
+                    "Nombre": "Musaraña"
+                },
+                {
+                    "Nombre": "Nautilus"
+                },
+                {
+                    "Nombre": "Nutria"
+                },
+                {
+                    "Nombre": "Ocelote"
+                },
+                {
+                    "Nombre": "Ogro"
+                },
+                {
+                    "Nombre": "Orangután"
+                },
+                {
+                    "Nombre": "Orca"
+                },
+                {
+                    "Nombre": "Orco"
+                },
+                {
+                    "Nombre": "Ornitorrinco"
+                },
+                {
+                    "Nombre": "Oso"
+                },
+                {
+                    "Nombre": "Ostra"
+                },
+                {
+                    "Nombre": "Oveja"
+                },
+                {
+                    "Nombre": "Paloma"
+                },
+                {
+                    "Nombre": "Panda"
+                },
+                {
+                    "Nombre": "Pangolín"
+                },
+                {
+                    "Nombre": "Pantera"
+                },
+                {
+                    "Nombre": "Pato"
+                },
+                {
+                    "Nombre": "Pavo"
+                },
+                {
+                    "Nombre": "Pegaso"
+                },
+                {
+                    "Nombre": "Pelícano"
+                },
+                {
+                    "Nombre": "Perezoso"
+                },
+                {
+                    "Nombre": "Perico"
+                },
+                {
+                    "Nombre": "Perro"
+                },
+                {
+                    "Nombre": "Piojo"
+                },
+                {
+                    "Nombre": "Pixie"
+                },
+                {
+                    "Nombre": "Pollo"
+                },
+                {
+                    "Nombre": "Poni"
+                },
+                {
+                    "Nombre": "Puercoespín"
+                },
+                {
+                    "Nombre": "Pulga"
+                },
+                {
+                    "Nombre": "Pulpo"
+                },
+                {
+                    "Nombre": "Puma"
+                },
+                {
+                    "Nombre": "Quebrantahuesos"
+                },
+                {
+                    "Nombre": "Quetzal"
+                },
+                {
+                    "Nombre": "Quimera"
+                },
+                {
+                    "Nombre": "Rana"
+                },
+                {
+                    "Nombre": "Rata"
+                },
+                {
+                    "Nombre": "Ratón"
+                },
+                {
+                    "Nombre": "Raya"
+                },
+                {
+                    "Nombre": "Rémora"
+                },
+                {
+                    "Nombre": "Renacuajo"
+                },
+                {
+                    "Nombre": "Reno"
+                },
+                {
+                    "Nombre": "Rinoceronte"
+                },
+                {
+                    "Nombre": "Roc"
+                },
+                {
+                    "Nombre": "Salamandra"
+                },
+                {
+                    "Nombre": "Salmón"
+                },
+                {
+                    "Nombre": "Saltamontes"
+                },
+                {
+                    "Nombre": "Sanguijuela"
+                },
+                {
+                    "Nombre": "Sapo"
+                },
+                {
+                    "Nombre": "Sardina"
+                },
+                {
+                    "Nombre": "Serpiente"
+                },
+                {
+                    "Nombre": "Sirena"
+                },
+                {
+                    "Nombre": "Tapir"
+                },
+                {
+                    "Nombre": "Tarántula"
+                },
+                {
+                    "Nombre": "Tejón"
+                },
+                {
+                    "Nombre": "Tiburón"
+                },
+                {
+                    "Nombre": "Tigre"
+                },
+                {
+                    "Nombre": "Topo"
+                },
+                {
+                    "Nombre": "Toro"
+                },
+                {
+                    "Nombre": "Tortuga"
+                },
+                {
+                    "Nombre": "Troll"
+                },
+                {
+                    "Nombre": "Tuátara"
+                },
+                {
+                    "Nombre": "Tucán"
+                },
+                {
+                    "Nombre": "Unicornio"
+                },
+                {
+                    "Nombre": "Vaca"
+                },
+                {
+                    "Nombre": "Varano"
+                },
+                {
+                    "Nombre": "Venado"
+                },
+                {
+                    "Nombre": "Víbora"
+                },
+                {
+                    "Nombre": "Walabí"
+                },
+                {
+                    "Nombre": "Xoloescuintle"
+                },
+                {
+                    "Nombre": "Zancudo"
+                },
+                {
+                    "Nombre": "Zarigüeya"
+                },
+                {
+                    "Nombre": "Zorra"
+                },
+                {
+                    "Nombre": "Zorrillo"
+                },
+                {
+                    "Nombre": "Zorro"
+                }
+            ];
+
+            var ddlCustomers = document.getElementById("Equipo");
+
+            //Add the Options to the DropDownList.
+            for (var i = 0; i < Clanes.length; i++) {
+                var option = document.createElement("OPTION");
+
+                //Set Customer Name in Text part.
+                option.innerHTML = Clanes[i].Nombre;
+
+                //Set CustomerId in Value part.
+                option.value = Clanes[i].Nombre;
+
+                //Add the Option element to DropDownList.
+                ddlCustomers.options.add(option);
+            }
         }
     </script>
 </body>
