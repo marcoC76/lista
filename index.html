@@ -98,8 +98,8 @@
 
 
                         <div class="">
-                            <div class="dividir">
-                                <div class="dividido">
+                            <div class="">
+                                <div class="">
                                     <label for="Avatar">Avatar:</label>
                                     <div class="nes-select is-dark">
                                         <select id="Avatar" class="icons" required onchange="avatarImg(value)">
@@ -188,9 +188,11 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="avatarImg" class="dividido">
-
-                                </div>
+                                <center>
+                                    <div id="avatarImg" class="">
+    
+                                    </div>
+                                </center>
 
 
                             </div>
@@ -217,14 +219,15 @@
                             </div>
                             <br>
                         </div>
-                        <div class="nes-field dividir">
-                            <div class="dividido">
+                        <div class="nes-field ">
+                            <div class="">
                                 <label for="ID">ID:</label>
                                 <input class="nes-input is-dark" id="ID" name="ID" type="text" focus disabled
                                     autocomplete="off">
                             </div>
-                            <div class="dividido nes-container is-rounded is-centered">
-                                <span style="font-size: 0.7em;">Apunta y guarda bien este ID y mantenlo
+                            <br>
+                            <div class=" nes-container is-rounded is-centered">
+                                <span style="font-size: 1em;">Apunta y guarda bien este ID y mantenlo
                                     privado</span>
                             </div>
 
@@ -295,7 +298,7 @@
         var avatarImg = function (data) {
             var icono = data;
             var imagen = document.getElementById("avatarImg");
-            imagen.innerHTML = `<img width="25%"  src="${icono}" alt="avatar imagen">`;
+            imagen.innerHTML = `<img width="50%"  src="${icono}" alt="avatar imagen">`;
 
         }
         var numero = function () {
