@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href="https://unpkg.com/nes.icons@3.0.0-beta.3/css/nes-icons.min.css" rel="stylesheet">
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 <style>
     * {
@@ -44,9 +44,7 @@
     }
 
     button {
-        background-color: #4CAF50;
-        color: #ffffff;
-        border: none;
+
         padding: 10px 20px;
         font-size: 17px;
 
@@ -57,16 +55,14 @@
         opacity: 0.8;
     }
 
-    #prevBtn {
-        background-color: #bbbbbb;
-    }
+    #prevBtn {}
 
     /* Make circles that indicate the steps of the form: */
     .step {
         height: 15px;
         width: 15px;
         margin: 0 2px;
-        background-color: #bbbbbb;
+        background-color: #bbbbbb00;
         border: none;
         border-radius: 50%;
         display: inline-block;
@@ -79,49 +75,156 @@
 
     /* Mark the steps that are finished and valid: */
     .step.finish {
-        background-color: #4CAF50;
+       
     }
 </style>
 
 <body>
 
-    <form id="regForm" action="/action_page.php" class="nes-container is-rounded">
-        <h1 class="title">Register:</h1>
-        <!-- One "tab" for each step in the form: -->
-        <div class="tab">Nombre:
-            <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-            <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
-        </div>
-        <div class="tab">Contacto:
-            <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-            <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-        </div>
-        <div class="tab">Cumpleaños:
-            <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-            <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-            <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-        </div>
-        <div class="tab">Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-        </div>
-        <div class="tab">Avatar:
-            <p><input placeholder="Avatar..." oninput="this.className = ''" name="favatar"></p>
-           
-        </div>
-        <div style="overflow:auto;">
-            <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    <form id="regForm" action="/action_page.php">
+        <div class="nes-container  with-title is-rounded" style="background-color:#48b9fad8">
+
+            <h1 style="text-transform: uppercase; background-color:#48B8FA; font-size: 1.5em;" class="title">
+                Registro en la lista</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab nes-field">
+                <label for="ApellidoPaterno">Apellido Paterno:</label>
+                <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required autocomplete="off"
+                    class="nes-input is-dark">
+                <br>
+                <label for="ApellidoMaterno">Apellido Materno:</label>
+                <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required autocomplete="off"
+                    class="nes-input is-dark">
+                <br>
+                <label for="Nombre">Nombre/s:</label>
+                <input id="Nombre" name="Nombre" type="text" required autocomplete="off" class="nes-input is-dark">
             </div>
-        </div>
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
+            <div class="tab">
+                <label for="Nick">Nombre de Usuario:</label>
+                <input id="Nick" name="Nick" type="text" required autocomplete="off" class="nes-input is-dark">
+                <br>
+                <br>
+                <label for="Avatar">Avatar:</label>
+                <div class="nes-select is-dark">
+                    <select id="Avatar" class="icons" required onchange="avatarImg(value)">
+                        <option value="" disabled selected>Escoge uno...</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje1.png?raw=true"
+                            class="left">1</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje1_H.png?raw=true"
+                            class="left">2</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje2.png?raw=true"
+                            class="left">3</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje2_H.png?raw=true"
+                            class="left">4</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje3.png?raw=true"
+                            class="left">5</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje3_H.png?raw=true"
+                            class="left">6</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje4.png?raw=true"
+                            class="left">7</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje4_H.png?raw=true"
+                            class="left">8</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje5.png?raw=true"
+                            class="left">9</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje5_H.png?raw=true"
+                            class="left">10</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje6.png?raw=true"
+                            class="left">11</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje6_H.png?raw=true"
+                            class="left">12</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje7.png?raw=true"
+                            class="left">13</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje7_H.png?raw=true"
+                            class="left">14</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje8.png?raw=true"
+                            class="left">15</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje8_H.png?raw=true"
+                            class="left">16</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje9.png?raw=true"
+                            class="left">17</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje9_H.png?raw=true"
+                            class="left">18</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje10.png?raw=true"
+                            class="left">19</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje10_H.png?raw=true"
+                            class="left">20</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje11.png?raw=true"
+                            class="left">21</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje11_H.png?raw=true"
+                            class="left">22</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje12.png?raw=true"
+                            class="left">23</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje12_H.png?raw=true"
+                            class="left">24</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje13.png?raw=true"
+                            class="left">25</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje13_H.png?raw=true"
+                            class="left">26</option>
+                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje0.png?raw=true"
+                            class="left">0</option>
+                    </select>
+                </div>
+                <center>
+
+                    <div id="avatarImg" class="">
+
+                    </div>
+                </center>
+            </div>
+            <div class="tab">
+                <label for="Equipo">Clan:</label>
+                <div class="nes-select is-dark">
+                    <select id="Equipo" name="Equipo" required>
+                        <option value="" disabled selected>El nombre de tu
+                            equipo...</option>
+                    </select>
+
+                </div>
+                <br>
+                <label for="Grupo">Grupo:</label>
+                <div class="nes-select is-dark">
+                    <select id="Grupo" required onchange="grupo(this.value)">
+                        <option value="" disabled selected>Escoge un grupo...</option>
+                        <option value="A">1°A</option>
+                        <option value="B">1°B</option>
+                        <option value="C">1°C</option>
+                        <option value="D">1°D</option>
+                        <option value="E">1°E</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tab">Login Info:
+                <label for="ID">ID:</label>
+                <input class="nes-input is-dark is-error" id="ID" name="ID" type="text" focus disabled
+                    autocomplete="off" style="color:#E76E55">
+                <br> <br>
+                <section class="message -left">
+                    <div class="nes-balloon from-left" style="left:3rem;">
+                        <span style="font-size: 1em;">Apunta y guarda bien este ID.<br> Debes mantenerlo privado.</span>
+                    </div> <br>
+                    <i class="nes-kirby"></i>
+                </section>
+            </div>
+            <!-- <div class="tab">Avatar:
+                <p><input placeholder="Avatar..." oninput="this.className = ''" name="favatar"></p>
+
+            </div> -->
+            <br>
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button class="nes-btn is-primary" type="button" id="prevBtn"
+                        onclick="nextPrev(-1)">Anterior</button>
+                    <button class="nes-btn is-success" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"><i class="nes-icon cog"></i></span>
+                <span class="step"><i class="nes-icon cog"></i></span>
+                <span class="step"><i class="nes-icon cog"></i></span>
+                <span class="step"><i class="nes-icon cog"></i></span>
+                <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
+            </div>
         </div>
     </form>
 
