@@ -25,6 +25,11 @@
             padding-top: 2%;
             padding-left: 5%;
             padding-right: 5%;
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
         }
 
         #ID {
@@ -46,6 +51,7 @@
         .nes-container.is-rounded.with-title>.title {
             margin-top: -2.5rem;
         }
+        div1 { grid-area: 2 / 2 / 6 / 3; }
     </style>
 </head>
 
@@ -54,7 +60,7 @@
 
     <div class="container ">
         <br>
-        <div class="">
+        <div class="div1">
 
             <form id="form">
                 <div class="nes-container  with-title is-rounded" style="background-color:#48b9fad8">
@@ -189,8 +195,9 @@
                                     </div>
                                 </div>
                                 <center>
+                                    
                                     <div id="avatarImg" class="">
-    
+
                                     </div>
                                 </center>
 
@@ -226,14 +233,13 @@
                                     autocomplete="off">
                             </div>
                             <br>
-<section class="message -left">
-                            <div class=" nes-balloon from-left" style="">
-                                <span style="font-size: 1em;">Apunta y guarda bien este ID y mantenlo
-                                    privado</span>
-
-                            </div>
-<i class="nes-kirby"></i>
-</section>
+                            <section class="message -left">
+                                <div class="nes-balloon from-left" style="left:3rem;">
+                                    <span style="font-size: 1em;">Apunta y guarda bien este ID y mantenlo
+                                        privado</span>
+                                </div> <br>
+                                <i class="nes-kirby"></i>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -301,7 +307,7 @@
         var avatarImg = function (data) {
             var icono = data;
             var imagen = document.getElementById("avatarImg");
-            imagen.innerHTML = `<img width="50%"  src="${icono}" alt="avatar imagen">`;
+            imagen.innerHTML = `<br><img width="50%"  src="${icono}" alt="avatar imagen">`;
 
         }
         var numero = function () {
