@@ -4,43 +4,70 @@
 <link href="https://unpkg.com/nes.icons@3.0.0-beta.3/css/nes-icons.min.css" rel="stylesheet">
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 <style>
-    * {
-        box-sizing: border-box;
+    body {
+        background-image: url("images/fondo2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-x: 50%;
+
     }
 
-    body {
-        background-color: #f1f1f1;
+    .container {
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: grid;
+        grid-template-columns: 1fr 50% 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
     }
+
+    #ID {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .dividir {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .dividido {
+        width: 49%;
+        display: flex;
+    }
+
+    .nes-container.is-rounded.with-title>.title {
+        margin-top: -2.5rem;
+    }
+
+    .div1 {
+        grid-area: 2 / 2 / 6 / 3;
+    }
+
+
 
     #regForm {
-        background-color: #ffffff;
-        margin: 100px auto;
 
-        padding: 40px;
-        width: 70%;
-        min-width: 300px;
+        margin: auto;
+
+        padding: 40px 0 0 0;
+        width: 100%;
+
     }
 
     h1 {
         text-align: center;
     }
 
-    input {
-        padding: 10px;
-        width: 100%;
-        font-size: 17px;
-
-        border: 1px solid #aaaaaa;
-    }
-
-    /* Mark input boxes that gets an error on validation: */
-    input.invalid {
-        background-color: #ffdddd;
-    }
 
     /* Hide all steps by default: */
     .tab {
         display: none;
+
     }
 
     button {
@@ -73,164 +100,529 @@
         opacity: 1;
     }
 
-    /* Mark the steps that are finished and valid: */
-    .step.finish {
-       
+    @media (max-width: 600px) {
+        .container {
+            grid-template-columns: 1fr 98% 1fr;
+        }
     }
+
+    /* Mark the steps that are finished and valid: */
+    .step.finish {}
 </style>
 
 <body>
+    <div class="container">
+        <form id="regForm" class="div1">
+            <div id="principal" class="nes-container  with-title is-rounded" style="background-color:#50a5c7d5">
 
-    <form id="regForm" action="/action_page.php">
-        <div class="nes-container  with-title is-rounded" style="background-color:#48b9fad8">
+                <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
+                    Estilo de aprendisaje</h1>
+                <!-- One "tab" for each step in the form: -->
+                <div class="tab">
 
-            <h1 style="text-transform: uppercase; background-color:#48B8FA; font-size: 1.5em;" class="title">
-                Registro en la lista</h1>
-            <!-- One "tab" for each step in the form: -->
-            <div class="tab nes-field">
-                <label for="ApellidoPaterno">Apellido Paterno:</label>
-                <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required autocomplete="off"
-                    class="nes-input is-dark">
-                <br>
-                <label for="ApellidoMaterno">Apellido Materno:</label>
-                <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required autocomplete="off"
-                    class="nes-input is-dark">
-                <br>
-                <label for="Nombre">Nombre/s:</label>
-                <input id="Nombre" name="Nombre" type="text" required autocomplete="off" class="nes-input is-dark">
-            </div>
-            <div class="tab">
-                <label for="Nick">Nombre de Usuario:</label>
-                <input id="Nick" name="Nick" type="text" required autocomplete="off" class="nes-input is-dark">
-                <br>
-                <br>
-                <label for="Avatar">Avatar:</label>
-                <div class="nes-select is-dark">
-                    <select id="Avatar" class="icons" required onchange="avatarImg(value)">
-                        <option value="" disabled selected>Escoge uno...</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje1.png?raw=true"
-                            class="left">1</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje1_H.png?raw=true"
-                            class="left">2</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje2.png?raw=true"
-                            class="left">3</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje2_H.png?raw=true"
-                            class="left">4</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje3.png?raw=true"
-                            class="left">5</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje3_H.png?raw=true"
-                            class="left">6</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje4.png?raw=true"
-                            class="left">7</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje4_H.png?raw=true"
-                            class="left">8</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje5.png?raw=true"
-                            class="left">9</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje5_H.png?raw=true"
-                            class="left">10</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje6.png?raw=true"
-                            class="left">11</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje6_H.png?raw=true"
-                            class="left">12</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje7.png?raw=true"
-                            class="left">13</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje7_H.png?raw=true"
-                            class="left">14</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje8.png?raw=true"
-                            class="left">15</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje8_H.png?raw=true"
-                            class="left">16</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje9.png?raw=true"
-                            class="left">17</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje9_H.png?raw=true"
-                            class="left">18</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje10.png?raw=true"
-                            class="left">19</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje10_H.png?raw=true"
-                            class="left">20</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje11.png?raw=true"
-                            class="left">21</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje11_H.png?raw=true"
-                            class="left">22</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje12.png?raw=true"
-                            class="left">23</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje12_H.png?raw=true"
-                            class="left">24</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje13.png?raw=true"
-                            class="left">25</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje13_H.png?raw=true"
-                            class="left">26</option>
-                        <option value="https://github.com/marcoC76/RCC/blob/master/images/personaje0.png?raw=true"
-                            class="left">0</option>
-                    </select>
-                </div>
-                <center>
-
-                    <div id="avatarImg" class="">
+                    <label for="ApellidoPaterno">Yo puedo recordar algo si lo digo en vos alta</label>
+                    <div style="background-color:#212529; padding: 1rem 0; ">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                              <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
 
                     </div>
-                </center>
-            </div>
-            <div class="tab">
-                <label for="Equipo">Clan:</label>
-                <div class="nes-select is-dark">
-                    <select id="Equipo" name="Equipo" required>
-                        <option value="" disabled selected>El nombre de tu
-                            equipo...</option>
-                    </select>
+                    <br>
+                    <label for="ApellidoMaterno">Prefiero seguir instrucciones escritas y no orales</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
 
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="Nombre">Cuando estudio, me gusta masticar chicle o comer algo</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
-                <br>
-                <label for="Grupo">Grupo:</label>
-                <div class="nes-select is-dark">
-                    <select id="Grupo" required onchange="grupo(this.value)">
-                        <option value="" disabled selected>Escoge un grupo...</option>
-                        <option value="A">1°A</option>
-                        <option value="B">1°B</option>
-                        <option value="C">1°C</option>
-                        <option value="D">1°D</option>
-                        <option value="E">1°E</option>
-                    </select>
+                <div class="tab">
+                    <label for="ApellidoPaterno">Disfruto aprendiendo cuando tengo a alguien que me explique
+                        cosas</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="ApellidoMaterno">Aprendo mejor de dibujos, diagramas y mapas</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="Nombre">Prefiero escuchar la musica para aprenderme la letra en lugar de leerla</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="tab">Login Info:
-                <label for="ID">ID:</label>
-                <input class="nes-input is-dark is-error" id="ID" name="ID" type="text" focus disabled
-                    autocomplete="off" style="color:#E76E55">
-                <br> <br>
-                <section class="message -left">
-                    <div class="nes-balloon from-left" style="left:3rem;">
-                        <span style="font-size: 1em;">Apunta y guarda bien este ID.<br> Debes mantenerlo privado.</span>
-                    </div> <br>
-                    <i class="nes-kirby"></i>
-                </section>
-            </div>
-            <!-- <div class="tab">Avatar:
+                <div class="tab">
+                    <label for="ApellidoPaterno">Recuerdo con facilidad lo que veo en la tv, internet, celular o
+                        revistas</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="ApellidoMaterno">Disfruto trabajar con mis manos y hacer manualidades</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="Nombre">Cuando estudio, me gusta masticar chicle o comer algo</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="tab">
+                    <label for="ApellidoPaterno">Escucho musica todo el tiempo</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="ApellidoMaterno">Disfruto la lectura, leo diariamente</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="Nombre">Disfruto estar cerca de otros. Me gustan los abarzos y saludos</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="tab">
+                    <label for="ApellidoPaterno">Cuando leo en silencio, me digo cada palabra a mi mismo</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="ApellidoMaterno">Cuando me piden deletrear una palabra, simplemente veo la palabra en mi
+                        mente</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <label for="Nombre">Cuando utilizo material, me encuentro yo mismo actuando, dibujando y haciendo
+                        garabatos</label>
+                    <div style="background-color:#212529; padding: 1rem 0;">
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" checked value="1" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i>
+                          <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" value="2" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" value="3" />
+                            <span>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                                <i class="nes-icon is-small star"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <!-- <div class="tab">Avatar:
                 <p><input placeholder="Avatar..." oninput="this.className = ''" name="favatar"></p>
 
             </div> -->
-            <br>
-            <div style="overflow:auto;">
-                <div style="float:right;">
-                    <button class="nes-btn is-primary" type="button" id="prevBtn"
-                        onclick="nextPrev(-1)">Anterior</button>
-                    <button class="nes-btn is-success" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                <br>
+                <div style="overflow:auto;">
+                    <div style="float:right;">
+                        <button class="nes-btn is-primary" type="button" id="prevBtn"
+                            onclick="nextPrev(-1)">Anterior</button>
+                        <button class="nes-btn is-success" type="button" id="nextBtn"
+                            onclick="nextPrev(1)">Siguiente</button>
+                    </div>
+                </div>
+                <!-- Circles which indicates the steps of the form: -->
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step"><i class="nes-icon cog"></i></span>
+                    <span class="step"><i class="nes-icon cog"></i></span>
+                    <span class="step"><i class="nes-icon cog"></i></span>
+                    <span class="step"><i class="nes-icon cog"></i></span>
+                    <span class="step"><i class="nes-icon cog"></i></span>
+
+                    <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
                 </div>
             </div>
-            <!-- Circles which indicates the steps of the form: -->
-            <div style="text-align:center;margin-top:40px;">
-                <span class="step"><i class="nes-icon cog"></i></span>
-                <span class="step"><i class="nes-icon cog"></i></span>
-                <span class="step"><i class="nes-icon cog"></i></span>
-                <span class="step"><i class="nes-icon cog"></i></span>
-                <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <script>
+        var a = 0;
+        var v = 0;
+        var k = 0;
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
+
+        function sumar() {
+            /* var i
+            for (i = 0; i < document.regForm.answer-dark.length; i++) {
+                if (document.regForm.answer-dark[i].checked) {
+                    a = a + document.regForm.answer-dark[i].value;
+                    break;
+
+                }
+            }
+           
+            console.log(a); */
+        }
 
         function showTab(n) {
             // This function will display the specified tab of the form...
@@ -243,12 +635,21 @@
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
+
+                document.getElementById("nextBtn").innerHTML = "ENVIAR";
+
             } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
+                document.getElementById("nextBtn").innerHTML = "Siguiente";
             }
             //... and run a function that will display the correct step indicator:
             fixStepIndicator(n)
+        }
+
+        function resultados() {
+
+
+
+            document.getElementById("principal").innerHTML = "RESULTADOS";
         }
 
         function nextPrev(n) {
@@ -263,7 +664,8 @@
             // if you have reached the end of the form...
             if (currentTab >= x.length) {
                 // ... the form gets submitted:
-                document.getElementById("regForm").submit();
+                /* document.getElementById("regForm").submit(); */
+                document.getElementById("nextBtn").addEventListener("click", resultados());
                 return false;
             }
             // Otherwise, display the correct tab:

@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="icon.png">
     <style>
         body {
-            background-image: url("images/fondo.jpg");
+            background-image: url("images/fondo2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -72,8 +72,8 @@
         <div class="div1">
 
             <form id="form">
-                <div class="nes-container  with-title is-rounded" style="background-color:#48b9fad8">
-                    <h1 style="text-transform: uppercase; background-color:#48B8FA; font-size: 1.5em;" class="title">
+                <div class="nes-container  with-title is-rounded" style="background-color:#50a5c7ce">
+                    <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
                         Registro en la lista</h1>
                     <div class="">
 
@@ -101,7 +101,7 @@
                             <div class="nes-field is-inline">
                                 <label for="Nick">Nombre de Usuario:</label>
                                 <input id="Nick" name="Nick" type="text" required autocomplete="off"
-                                    class="nes-input is-dark" >
+                                    class="nes-input is-dark">
                                 <!-- <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de
                                     usuario o apodo que te identifique</span> -->
                             </div>
@@ -117,96 +117,43 @@
                                 <div class="">
                                     <label for="Avatar">Avatar:</label>
                                     <div class="nes-select is-dark">
-                                        <select id="Avatar" class="icons" required onchange="avatarImg(value)">
+                                        <select id="Avatar" class="icons" required onchange="avatarImg(value);">
                                             <option value="" disabled selected>Escoge uno...</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje1.png?raw=true"
-                                                class="left">1</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje1_H.png?raw=true"
-                                                class="left">2</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje2.png?raw=true"
-                                                class="left">3</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje2_H.png?raw=true"
-                                                class="left">4</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje3.png?raw=true"
-                                                class="left">5</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje3_H.png?raw=true"
-                                                class="left">6</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje4.png?raw=true"
-                                                class="left">7</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje4_H.png?raw=true"
-                                                class="left">8</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje5.png?raw=true"
-                                                class="left">9</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje5_H.png?raw=true"
-                                                class="left">10</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje6.png?raw=true"
-                                                class="left">11</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje6_H.png?raw=true"
-                                                class="left">12</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje7.png?raw=true"
-                                                class="left">13</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje7_H.png?raw=true"
-                                                class="left">14</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje8.png?raw=true"
-                                                class="left">15</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje8_H.png?raw=true"
-                                                class="left">16</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje9.png?raw=true"
-                                                class="left">17</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje9_H.png?raw=true"
-                                                class="left">18</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje10.png?raw=true"
-                                                class="left">19</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje10_H.png?raw=true"
-                                                class="left">20</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje11.png?raw=true"
-                                                class="left">21</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje11_H.png?raw=true"
-                                                class="left">22</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje12.png?raw=true"
-                                                class="left">23</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje12_H.png?raw=true"
-                                                class="left">24</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje13.png?raw=true"
-                                                class="left">25</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje13_H.png?raw=true"
-                                                class="left">26</option>
-                                            <option
-                                                value="https://github.com/marcoC76/RCC/blob/master/images/personaje0.png?raw=true"
-                                                class="left">0</option>
+                                            <option value="1" class="left">1</option>
+                                            <option value="2" class="left">2</option>
+                                            <option value="3" class="left">3</option>
+                                            <option value="4" class="left">4</option>
+                                            <option value="5" class="left">5</option>
+                                            <option value="6" class="left">6</option>
+                                            <option value="7" class="left">7</option>
+                                            <option value="8" class="left">8</option>
+                                            <option value="9" class="left">9</option>
+                                            <option value="10" class="left">10</option>
+                                            <option value="11" class="left">11</option>
+                                            <option value="12" class="left">12</option>
+                                            <option value="13" class="left">13</option>
+                                            <option value="14" class="left">14</option>
+                                            <option value="15" class="left">15</option>
+                                            <option value="16" class="left">16</option>
+                                            <option value="17" class="left">17</option>
+                                            <option value="18" class="left">18</option>
+                                            <option value="19" class="left">19</option>
+                                            <option value="20" class="left">20</option>
+                                            <option value="21" class="left">21</option>
+                                            <option value="22" class="left">22</option>
+                                            <option value="23" class="left">23</option>
+                                            <option value="24" class="left">24</option>
+                                            <option value="25" class="left">25</option>
+                                            <option value="26" class="left">26</option>
+                                            <option value="0" class="left">0</option>
                                         </select>
                                     </div>
                                 </div>
                                 <center>
 
-                                    <div id="avatarImg" class="">
-
+                                    <div class="">
+                                        <br>
+                                        <img id="avatarI" width="50%" src="">
                                     </div>
                                 </center>
 
@@ -244,7 +191,8 @@
                             <br>
                             <section class="message -left">
                                 <div class="nes-balloon from-left" style="left:3rem;">
-                                    <span style="font-size: 1em;">Apunta y guarda bien este ID.<br> Debes mantenerlo privado.</span>
+                                    <span style="font-size: 1em;">Apunta y guarda bien este ID.<br> Debes mantenerlo
+                                        privado.</span>
                                 </div> <br>
                                 <i class="nes-kirby"></i>
                             </section>
@@ -252,7 +200,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="" style="">
+                <div class="">
                     <center>
                         <input class="nes-btn is-primary" onclick="formSubmit();" type="button" value="Registrar"
                             id="crear" />
@@ -312,10 +260,129 @@
                 });
 
         }
-        var avatarImg = function (data) {
-            var icono = data;
-            var imagen = document.getElementById("avatarImg");
-            imagen.innerHTML = `<br><img width="50%"  src="${icono}" alt="avatar imagen">`;
+        let avatarImg = function (data) {
+            var icono = parseInt(data);
+            var ava = "../images/load.gif";
+            document.getElementById("avatarI").src = ava;
+            switch (icono) {
+                case 1:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje1.png?raw=true`;
+                    console.log("uno");
+
+                    break;
+                case 2:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje1_H.png?raw=true`;
+                    console.log("dos");
+                    break;
+                case 3:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje2.png?raw=true`;
+                    break;
+                case 4:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje2_H.png?raw=true`;
+                    break;
+                case 5:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje3.png?raw=true`;
+                    break;
+                case 6:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje3_H.png?raw=true`;
+                    break;
+                case 7:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje4.png?raw=true`;
+                    break;
+                case 8:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje4_H.png?raw=true`;
+                    break;
+                case 9:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje5.png?raw=true`;
+                    break;
+                case 10:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje5_H.png?raw=true`;
+                    break;
+                case 11:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje6.png?raw=true`;
+                    break;
+                case 12:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje6_H.png?raw=true`;
+                    break;
+                case 13:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje7.png?raw=true`;
+                    break;
+                case 14:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje7_H.png?raw=true`;
+                    break;
+                case 15:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje8.png?raw=true`;
+                    break;
+                case 16:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje8_H.png?raw=true`;
+                    break;
+                case 17:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje9.png?raw=true`;
+                    break;
+                case 18:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje9_H.png?raw=true`;
+                    break;
+                case 19:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje10.png?raw=true`;
+                    break;
+                case 20:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje10_H.png?raw=true`;
+                    break;
+                case 21:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje11.png?raw=true`;
+                    break;
+                case 22:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje11_H.png?raw=true`;
+                    break;
+                case 23:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje12.png?raw=true`;
+                    break;
+                case 24:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje12_H.png?raw=true`;
+                    break;
+                case 25:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje13.png?raw=true`;
+                    break;
+                case 26:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje13_H.png?raw=true`;
+                    break;
+                case 0:
+                    ava =
+                        `https://github.com/marcoC76/RCC/blob/master/images/personaje0.png?raw=true`;
+                    break;
+
+                default:
+                    ava =
+                        ``;
+                    break;
+            }
+            document.getElementById("avatarI").src = ava;
 
         }
         var numero = function () {
@@ -449,18 +516,18 @@
                                     <br>
                                     <h4> Haz sido registrado en la lista
                                         <a href="#" class="nes-badge ">
-                                            <span class="is-warning ">
+                                            <span class="is-dark ">
                                                 ${Nombre}
                                             </span>
                                         </a>
                                         <br>
-                                        <br> Tu Nombre de Usuario es: <a href="#" class="nes-badge"> <span class="is-warning">${Nick}</span></a>
-                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-warning">${ID}</span></a> <br><br> Tu
+                                        <br> Tu Nombre de Usuario es: <a href="#" class="nes-badge"> <span class="is-dark">${Nick}</span></a>
+                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br><br> Tu
                                         Clan es:
-                                        <a href="#" class="nes-badge"> <span class="is-warning">${Equipo}</span></a></h4>
+                                        <a href="#" class="nes-badge"> <span class="is-dark">${Equipo}</span></a></h4>
                                     <br> <br>
                                     <center>
-                                        <input class="nes-btn is-success" onclick="location.reload()" type="button" value="Nuevo registro"
+                                        <input class="nes-btn is-success" onclick="vak();" type="button" value="Cuestionario VAK"
                                             id="nuevo" />
                                     </center>
                                 </div>
@@ -468,6 +535,9 @@
                             `;
                 document.getElementById("form").innerHTML = salida;
             }
+        }
+        function vak() {
+            location.replace("indexOtro.html")
         }
 
         function convertToCSV(objArray) {
