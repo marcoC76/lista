@@ -83,7 +83,7 @@
         opacity: 0.8;
     }
 
-    #prevBtn {}
+    /* #prevBtn {} */
 
     /* Make circles that indicate the steps of the form: */
     .step {
@@ -108,7 +108,7 @@
     }
 
     /* Mark the steps that are finished and valid: */
-    .step.finish {}
+    /*  .step.finish {} */
 </style>
 
 <body>
@@ -120,462 +120,349 @@
                     Estilo de aprendisaje</h1>
                 <!-- One "tab" for each step in the form: -->
                 <div class="tab">
+                    <div class="">
+                        <label for="a1">Yo puedo recordar algo si lo digo en vos alta</label>
+                        <div class="nes-select is-dark">
+                            <select id="a1" class="icons" required onchange="auditivo1(value);">
+                                <option value="" disabled selected>Escoge uno...</option>
+                                <option value="1" class="left">
+                                    <span>
+                                        ⭐️
+                                    </span>
+                                </option>
+                                <option value="2" class="left">
+                                    <span>
+                                        ⭐️⭐️
+                                    </span>
+                                </option>
+                                <option value="3" class="left">
+                                    <span>
+                                        ⭐️⭐️⭐️
+                                    </span>
+                                </option>
+                            </select>
+                        </div>
 
-                    <label for="ApellidoPaterno">Yo puedo recordar algo si lo digo en vos alta</label>
-                    <div style="background-color:#212529; padding: 1rem 0; ">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                              <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
-
-                    </div>
-                    <br>
-                    <label for="ApellidoMaterno">Prefiero seguir instrucciones escritas y no orales</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark2" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
-                    </div>
-                    <br>
-                    <label for="Nombre">Cuando estudio, me gusta masticar chicle o comer algo</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark3" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                        <br>
+                        <label for="v1">Prefiero seguir instrucciones escritas y no orales</label>
+                        <div class="nes-select is-dark">
+                            <select id="v1" class="icons" required onchange="visual1(value);">
+                                <option value="" disabled selected>Escoge uno...</option>
+                                <option value="1" class="left">
+                                    <span>
+                                        ⭐️
+                                    </span>
+                                </option>
+                                <option value="2" class="left">
+                                    <span>
+                                        ⭐️⭐️
+                                    </span>
+                                </option>
+                                <option value="3" class="left">
+                                    <span>
+                                        ⭐️⭐️⭐️
+                                    </span>
+                                </option>
+                            </select>
+                        </div>
+                        <br>
+                        <label for="k1">Cuando estudio, me gusta masticar chicle o comer algo</label>
+                        <div class="nes-select is-dark">
+                            <select id="k1" class="icons" required onchange="kines1(value)">
+                                <option value="" disabled selected>Escoge uno...</option>
+                                <option value="1" class="left">
+                                    <span>
+                                        ⭐️
+                                    </span>
+                                </option>
+                                <option value="2" class="left">
+                                    <span>
+                                        ⭐️⭐️
+                                    </span>
+                                </option>
+                                <option value="3" class="left">
+                                    <span>
+                                        ⭐️⭐️⭐️
+                                    </span>
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="tab">
-                    <label for="ApellidoPaterno">Disfruto aprendiendo cuando tengo a alguien que me explique
+                    <label for="a2">Disfruto aprendiendo cuando tengo a alguien que me explique
                         cosas</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark4" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <div class="nes-select is-dark">
+                        <select id="a2" class="icons" required onchange="auditivo2(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="ApellidoMaterno">Aprendo mejor de dibujos, diagramas y mapas</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark5" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="v2">Aprendo mejor de dibujos, diagramas y mapas</label>
+                    <div class="nes-select is-dark">
+                        <select id="v2" class="icons" required onchange="visual2(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="Nombre">Prefiero escuchar la musica para aprenderme la letra en lugar de leerla</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark6" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="k2">Prefiero escuchar la musica para aprenderme la letra en lugar de
+                        leerla</label>
+                    <div class="nes-select is-dark">
+                        <select id="k2" class="icons" required onchange="kines2(value)">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                 </div>
+
                 <div class="tab">
-                    <label for="ApellidoPaterno">Recuerdo con facilidad lo que veo en la tv, internet, celular o
+                    <label for="a3">Recuerdo con facilidad lo que veo en la tv, internet, celular o
                         revistas</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark7" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <div class="nes-select is-dark">
+                        <select id="a3" class="icons" required onchange="auditivo3(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="ApellidoMaterno">Disfruto trabajar con mis manos y hacer manualidades</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark8" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="v3">Disfruto trabajar con mis manos y hacer manualidades</label>
+                    <div class="nes-select is-dark">
+                        <select id="v3" class="icons" required onchange="visual3(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="Nombre">Cuando estudio, me gusta masticar chicle o comer algo</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark9" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="k3">Cuando estudio, me gusta masticar chicle o comer algo</label>
+                    <div class="nes-select is-dark">
+                        <select id="k3" class="icons" required onchange="kines3(value)">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                 </div>
                 <div class="tab">
-                    <label for="ApellidoPaterno">Escucho musica todo el tiempo</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark10" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="a4">Escucho musica todo el tiempo</label>
+                    <div class="nes-select is-dark">
+                        <select id="a4" class="icons" required onchange="auditivo4(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="ApellidoMaterno">Disfruto la lectura, leo diariamente</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark11" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="v4">Disfruto la lectura, leo diariamente</label>
+                    <div class="nes-select is-dark">
+                        <select id="v4" class="icons" required onchange="visual4(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="Nombre">Disfruto estar cerca de otros. Me gustan los abarzos y saludos</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark12" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="k4">Disfruto estar cerca de otros. Me gustan los abarzos y saludos</label>
+                    <div class="nes-select is-dark">
+                        <select id="k4" class="icons" required onchange="kines4(value)">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                 </div>
                 <div class="tab">
-                    <label for="ApellidoPaterno">Cuando leo en silencio, me digo cada palabra a mi mismo</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark13" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <label for="a5">Cuando leo en silencio, me digo cada palabra a mi mismo</label>
+                    <div class="nes-select is-dark">
+                        <select id="a5" class="icons" required onchange="auditivo5(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="ApellidoMaterno">Cuando me piden deletrear una palabra, simplemente veo la palabra en mi
+                    <label for="v5">Cuando me piden deletrear una palabra, simplemente veo la palabra
+                        en mi
                         mente</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark14" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <div class="nes-select is-dark">
+                        <select id="v5" class="icons" required onchange="visual5(value);">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                     <br>
-                    <label for="Nombre">Cuando utilizo material, me encuentro yo mismo actuando, dibujando y haciendo
+                    <label for="k5">Cuando utilizo material, me encuentro yo mismo actuando, dibujando y
+                        haciendo
                         garabatos</label>
-                    <div style="background-color:#212529; padding: 1rem 0;">
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" checked value="1" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i>
-                          <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" value="2" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <!-- <i class="nes-icon is-small star is-empty"></i> -->
-                            </span>
-                        </label>
-
-                        <label>
-                            <input type="radio" class="nes-radio is-dark" name="answer-dark15" value="3" />
-                            <span>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                                <i class="nes-icon is-small star"></i>
-                            </span>
-                        </label>
+                    <div class="nes-select is-dark">
+                        <select id="k5" class="icons" required onchange="kines5(value)">
+                            <option value="" disabled selected>Escoge uno...</option>
+                            <option value="1" class="left">
+                                <span>
+                                    ⭐️
+                                </span>
+                            </option>
+                            <option value="2" class="left">
+                                <span>
+                                    ⭐️⭐️
+                                </span>
+                            </option>
+                            <option value="3" class="left">
+                                <span>
+                                    ⭐️⭐️⭐️
+                                </span>
+                            </option>
+                        </select>
                     </div>
                 </div>
                 <!-- <div class="tab">Avatar:
@@ -585,9 +472,9 @@
                 <br>
                 <div style="overflow:auto;">
                     <div style="float:right;">
-                        <button class="nes-btn is-primary" type="button" id="prevBtn"
+                        <button class="nes-btn is-normal" type="button" id="prevBtn"
                             onclick="nextPrev(-1)">Anterior</button>
-                        <button class="nes-btn is-success" type="button" id="nextBtn"
+                        <button class="nes-btn is-warning" type="button" id="nextBtn"
                             onclick="nextPrev(1)">Siguiente</button>
                     </div>
                 </div>
@@ -598,7 +485,6 @@
                     <span class="step"><i class="nes-icon cog"></i></span>
                     <span class="step"><i class="nes-icon cog"></i></span>
                     <span class="step"><i class="nes-icon cog"></i></span>
-
                     <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
                 </div>
             </div>
@@ -609,6 +495,10 @@
         var a = 0;
         var v = 0;
         var k = 0;
+
+        var a1, a2, a3, a4, a5,
+            v1, v2, v3, v4, v5,
+            k1, k2, k3, k4, k5;
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
 
@@ -646,11 +536,98 @@
             fixStepIndicator(n)
         }
 
+        function auditivo1(value) {
+            a1 = parseInt(value);
+            console.log(a1);
+        }
+
+        function auditivo2(value) {
+            a2 = parseInt(value);
+            console.log(a2);
+        }
+
+        function auditivo3(value) {
+            a3 = parseInt(value);
+            console.log(a3);
+        }
+
+        function auditivo4(value) {
+            a4 = parseInt(value);
+            console.log(a4);
+        }
+
+        function auditivo5(value) {
+            a5 = parseInt(value);
+            console.log(a5);
+        }
+
+        function visual1(value) {
+            v1 = parseInt(value);
+            console.log(v1);
+        }
+
+        function visual2(value) {
+            v2 = parseInt(value);
+            console.log(v2);
+        }
+
+        function visual3(value) {
+            v3 = parseInt(value);
+            console.log(v3);
+        }
+
+        function visual4(value) {
+            v4 = parseInt(value);
+            console.log(v4);
+        }
+
+        function visual5(value) {
+            v5 = parseInt(value);
+            console.log(v5);
+        }
+
+        function kines1(value) {
+            k1 = parseInt(value);
+            console.log(k1);
+        }
+
+        function kines2(value) {
+            k2 = parseInt(value);
+            console.log(k2);
+        }
+
+        function kines3(value) {
+            k3 = parseInt(value);
+            console.log(k3);
+        }
+
+        function kines4(value) {
+            k4 = parseInt(value);
+            console.log(k4);
+        }
+
+        function kines5(value) {
+            k5 = parseInt(value);
+            console.log(k5);
+        }
+
         function resultados() {
-
-
-
-            document.getElementById("principal").innerHTML = "RESULTADOS";
+            a = a1 + a2 + a3 + a4 + a5;
+            v = v1 + v2 + v3 + v4 + v5;
+            k = k1 + k2 + k3 + k4 + k5;
+            console.log(a);
+            console.log(v);
+            console.log(k);
+            document.getElementById("principal").innerHTML = `
+                <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
+                    Resultados</h1>
+                Auditivo:
+                <progress class="nes-progress is-success" value="${a}" max="15"></progress>
+                Visual:
+                <progress class="nes-progress is-warning" value="${v}" max="15"></progress>
+                Kinestesico:
+                <progress class="nes-progress is-error" value="${k}" max="15"></progress>
+            `;
         }
 
         function nextPrev(n) {
