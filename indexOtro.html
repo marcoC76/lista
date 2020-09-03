@@ -618,6 +618,35 @@
             console.log(a);
             console.log(v);
             console.log(k);
+var dominante; 
+if(a>=v)
+	{
+		
+		if(a>=k)
+		{
+		dominante = "Tu estilo dominante es Auditivo";
+		}
+
+		
+	}
+	if(v>=a)
+	{
+		if(v>=k)
+		{
+		dominante = "Tu estilo dominante es Visual";
+		}
+
+
+	}
+	if(k>=a)
+	{
+		if(k>=v)
+		{
+		dominante = "Tu estilo dominante es Kinestesico";
+		}
+
+	
+	}
             document.getElementById("principal").innerHTML = `
                 <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
                     Resultados</h1>
@@ -627,6 +656,7 @@
                 <progress class="nes-progress is-warning" value="${v}" max="15"></progress>
                 Kinestesico:
                 <progress class="nes-progress is-error" value="${k}" max="15"></progress>
+<h2>${dominante}</h2>
             `;
         }
 
