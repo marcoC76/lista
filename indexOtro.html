@@ -129,6 +129,30 @@
         margin-left: 90%;
     }
 
+.typewriter {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
     @media (max-width: 600px) {
         .container {
             grid-template-columns: 1fr 98% 1fr;
@@ -155,7 +179,7 @@
                     <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
                         Estilo de aprendizaje</h1>
                     <!-- One "tab" for each step in the form: -->
-                    <div class="tab">
+                    <div class="tab typewriter">
                         <p>
                             El numero de estrellas refleja tu identifiacion con cada frase:
                         </p>
@@ -171,7 +195,7 @@
                         </p>
                     </div>
                     <div class="tab">
-                        <div class="">
+                        <div class="typewriter">
                             <label for="a1">Yo puedo recordar algo si lo digo en vos alta</label>
                             <div class="nes-select is-dark">
                                 <select id="a1" class="icons" onchange="auditivo1(value);">
