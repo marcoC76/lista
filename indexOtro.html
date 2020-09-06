@@ -4,7 +4,7 @@
 <link href="https://unpkg.com/nes.icons@3.0.0-beta.3/css/nes-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 <style>
     body {
         background-image: url("images/fondo2.jpg");
@@ -129,28 +129,8 @@
         margin-left: 90%;
     }
 
-.typewriter {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid black; /* The typwriter cursor */
- /* white-space: nowrap;  Keeps the content on a single line */
-/*  margin: 0;  Gives that scrolling effect as the typing happens */
- /* letter-spacing: 0em; Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: black }
-}
     @media (max-width: 600px) {
         .container {
             grid-template-columns: 1fr 98% 1fr;
@@ -171,14 +151,16 @@
     <div class="container">
         <form id="regForm" class="div1">
             <section class="message -right">
-                <div id="principal" class="nes-balloon from-right  with-title is-rounded"
+                <div id="principal"
+                    class="animate__animated animate__zoomIn nes-balloon from-right  with-title is-rounded"
                     style="background-color:#50a5c7d5">
 
-                    <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title typewriter">
-                        Estilo de <br> aprendizaje</h1>
+                    <h1 style="text-transform: uppercase; font-size: 1.5em;"
+                        class="title animate__animated animate__fadeInLeft animate__delay-1s">
+                        Estilo de aprendizaje</h1>
                     <!-- One "tab" for each step in the form: -->
-                    <div class="tab">
-                        <p>
+                    <div class="tab animate__animated animate__fadeInLeft animate__delay-2s ">
+                        <p class="">
                             El numero de estrellas refleja tu identifiacion con cada frase:
                         </p>
                         <p>
@@ -193,7 +175,7 @@
                         </p>
                     </div>
                     <div class="tab">
-                        <div class="">
+                        <div class="animate__animated animate__zoomInLeft">
                             <label for="a1">Yo puedo recordar algo si lo digo en vos alta</label>
                             <div class="nes-select is-dark">
                                 <select id="a1" class="icons" onchange="auditivo1(value);">
@@ -263,281 +245,289 @@
                         </div>
                     </div>
                     <div class="tab">
-                        <label for="a2">Disfruto aprendiendo cuando tengo a alguien que me explique
-                            cosas</label>
-                        <div class="nes-select is-dark">
-                            <select id="a2" class="icons" onchange="auditivo2(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="v2">Aprendo mejor de dibujos, diagramas y mapas</label>
-                        <div class="nes-select is-dark">
-                            <select id="v2" class="icons" onchange="visual2(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="k2">Cuando estudio, me gusta masticar chicle o comer algo</label>
-                        <div class="nes-select is-dark">
-                            <select id="k2" class="icons" onchange="kines2(value)">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
+                        <div class="animate__animated animate__zoomInLeft">
+                            <label for="a2">Disfruto aprendiendo cuando tengo a alguien que me explique
+                                cosas</label>
+                            <div class="nes-select is-dark">
+                                <select id="a2" class="icons" onchange="auditivo2(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="v2">Aprendo mejor de dibujos, diagramas y mapas</label>
+                            <div class="nes-select is-dark">
+                                <select id="v2" class="icons" onchange="visual2(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="k2">Cuando estudio, me gusta masticar chicle o comer algo</label>
+                            <div class="nes-select is-dark">
+                                <select id="k2" class="icons" onchange="kines2(value)">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
                     <div class="tab">
-                        <label for="a3">
-                            Prefiero escuchar la música para aprenderme la letra en lugar de
-                            leerla</label>
-                        <div class="nes-select is-dark">
-                            <select id="a3" class="icons" onchange="auditivo3(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="v3">
-                            Recuerdo con facilidad lo que veo en la tv, internet, celular o
-                            revistas</label>
-                        <div class="nes-select is-dark">
-                            <select id="v3" class="icons" onchange="visual3(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="k3">Disfruto trabajar con mis manos y hacer manualidades</label>
-                        <div class="nes-select is-dark">
-                            <select id="k3" class="icons" onchange="kines3(value)">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <label for="a4">Escucho musica todo el tiempo</label>
-                        <div class="nes-select is-dark">
-                            <select id="a4" class="icons" onchange="auditivo4(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="v4">Disfruto la lectura, leo diariamente</label>
-                        <div class="nes-select is-dark">
-                            <select id="v4" class="icons" onchange="visual4(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="k4">Disfruto estar cerca de otros. Me gustan los abrazos y saludos</label>
-                        <div class="nes-select is-dark">
-                            <select id="k4" class="icons" onchange="kines4(value)">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
+                        <div class="animate__animated animate__zoomInLeft">
+                            <label for="a3">
+                                Prefiero escuchar la música para aprenderme la letra en lugar de
+                                leerla</label>
+                            <div class="nes-select is-dark">
+                                <select id="a3" class="icons" onchange="auditivo3(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="v3">
+                                Recuerdo con facilidad lo que veo en la tv, internet, celular o
+                                revistas</label>
+                            <div class="nes-select is-dark">
+                                <select id="v3" class="icons" onchange="visual3(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="k3">Disfruto trabajar con mis manos y hacer manualidades</label>
+                            <div class="nes-select is-dark">
+                                <select id="k3" class="icons" onchange="kines3(value)">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="tab">
-                        <label for="a5">Cuando leo en silencio, me digo cada palabra a mi mismo</label>
-                        <div class="nes-select is-dark">
-                            <select id="a5" class="icons" onchange="auditivo5(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
+                        <div class="animate__animated animate__zoomInLeft">
+                            <label for="a4">Escucho musica todo el tiempo</label>
+                            <div class="nes-select is-dark">
+                                <select id="a4" class="icons" onchange="auditivo4(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="v4">Disfruto la lectura, leo diariamente</label>
+                            <div class="nes-select is-dark">
+                                <select id="v4" class="icons" onchange="visual4(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="k4">Disfruto estar cerca de otros. Me gustan los abrazos y saludos</label>
+                            <div class="nes-select is-dark">
+                                <select id="k4" class="icons" onchange="kines4(value)">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
                         </div>
-                        <br>
-                        <label for="v5">Cuando me piden deletrear una palabra, simplemente veo la palabra
-                            en mí
-                            mente</label>
-                        <div class="nes-select is-dark">
-                            <select id="v5" class="icons" onchange="visual5(value);">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
-                        </div>
-                        <br>
-                        <label for="k5">Cuando utilizo material, me encuentro yo mismo actuando, dibujando y
-                            haciendo
-                            garabatos</label>
-                        <div class="nes-select is-dark">
-                            <select id="k5" class="icons" onchange="kines5(value)">
-                                <option value="0" disabled selected>Escoge uno...</option>
-                                <option value="1" class="left">
-                                    <span>
-                                        ⭐️
-                                    </span>
-                                </option>
-                                <option value="2" class="left">
-                                    <span>
-                                        ⭐️⭐️
-                                    </span>
-                                </option>
-                                <option value="3" class="left">
-                                    <span>
-                                        ⭐️⭐️⭐️
-                                    </span>
-                                </option>
-                            </select>
+                    </div>
+                    <div class="tab">
+                        <div class="animate__animated animate__zoomInLeft">
+                            <label for="a5">Cuando leo en silencio, me digo cada palabra a mi mismo</label>
+                            <div class="nes-select is-dark">
+                                <select id="a5" class="icons" onchange="auditivo5(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="v5">Cuando me piden deletrear una palabra, simplemente veo la palabra
+                                en mí
+                                mente</label>
+                            <div class="nes-select is-dark">
+                                <select id="v5" class="icons" onchange="visual5(value);">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="k5">Cuando utilizo material, me encuentro yo mismo actuando, dibujando y
+                                haciendo
+                                garabatos</label>
+                            <div class="nes-select is-dark">
+                                <select id="k5" class="icons" onchange="kines5(value)">
+                                    <option value="0" disabled selected>Escoge uno...</option>
+                                    <option value="1" class="left">
+                                        <span>
+                                            ⭐️
+                                        </span>
+                                    </option>
+                                    <option value="2" class="left">
+                                        <span>
+                                            ⭐️⭐️
+                                        </span>
+                                    </option>
+                                    <option value="3" class="left">
+                                        <span>
+                                            ⭐️⭐️⭐️
+                                        </span>
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="tab">Avatar:
@@ -547,20 +537,26 @@
                     <br>
                     <div style="overflow:auto;">
                         <div style="float:right;">
-                            <button class="nes-btn is-normal" type="button" id="prevBtn"
-                                onclick="nextPrev(-1)">Anterior</button>
-                            <button class="nes-btn is-warning" type="button" id="nextBtn"
-                                onclick="nextPrev(1)">Siguiente</button>
+                            <button class="animate__animated animate__bounceIn animate__delay-1s nes-btn is-normal"
+                                type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+                            <button class="animate__animated animate__bounceIn animate__delay-3s nes-btn is-warning"
+                                type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
                         </div>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->
-                    <div style="text-align:center;margin-top:40px;">
-                        <span class="step"><i class="nes-icon coin"></i></span>
-                        <span class="step"><i class="nes-icon coin"></i></span>
-                        <span class="step"><i class="nes-icon coin"></i></span>
-                        <span class="step"><i class="nes-icon coin"></i></span>
-                        <span class="step"><i class="nes-icon coin"></i></span>
-                        <span class="step"><i class="nes-icon coin"></i></span>
+                    <div style="text-align:center;margin-top:40px;" class="">
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
+                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span>
                         <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
                     </div>
                 </div>
@@ -699,7 +695,7 @@
             var dominante;
             if (a >= v) {
                 if (a >= k) {
-                    dominante = `<br><br><a href="#" class="nes-badge">
+                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark">Auditivo</span></a>
                                     <br><br>
                                     <p><i class="nes-icon bomb"></i>Las personas que son más auditivas tienden a recordar mejor la información siguiendo y rememorando una explicación oral.</p>
@@ -709,7 +705,7 @@
             }
             if (v >= a) {
                 if (v >= k) {
-                    dominante = `<br><br><a href="#" class="nes-badge">
+                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark">Visual</span></a>
                                     <br><br>
                                     <p><i class="nes-icon eye"></i>El sistema de representación visual tiende a ser el sistema de representación dominante en la mayoría de las personas. Ocurre cuando uno tiende a pensar en imágenes y a relacionarlas con ideas y conceptos.</p>
@@ -719,7 +715,7 @@
             }
             if (k >= a) {
                 if (k >= v) {
-                    dominante = `<br><br><a href="#" class="nes-badge">
+                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark">Kinestésico</span></a>
                                     <br><br>
                                     <p><i class="nes-icon heart"></i>Se trata del aprendizaje relacionado a nuestras sensaciones y movimientos. En otras palabras, es lo que ocurre cuando aprendemos más fácilmente al movernos y tocar las cosas, como cuando caminamos al recitar información o hacemos un experimento manipulando instrumentos de laboratorio.</p>
@@ -731,11 +727,11 @@
                 <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
                     Resultados</h1>
                 Auditivo:
-                <progress class="nes-progress is-success" value="${a}" max="15"></progress>
+                <progress class="nes-progress is-success animate__animated animate__zoomInLeft" value="${a}" max="15"></progress>
                 Visual:
-                <progress class="nes-progress is-warning" value="${v}" max="15"></progress>
+                <progress class="nes-progress is-warning animate__animated animate__zoomInLeft animate__delay-1s" value="${v}" max="15"></progress>
                 Kinestesico:
-                <progress class="nes-progress is-error" value="${k}" max="15"></progress>   
+                <progress class="nes-progress is-error animate__animated animate__zoomInLeft animate__delay-2s" value="${k}" max="15"></progress>   
                 ${dominante}
             `;
         }
