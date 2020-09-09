@@ -129,7 +129,12 @@
         margin-left: 90%;
     }
 
-
+    .no-seleccionable {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
     @media (max-width: 600px) {
         .container {
@@ -149,7 +154,7 @@
 
 <body>
     <div class="container">
-        <form id="regForm" class="div1">
+        <form id="regForm" class="div1 no-seleccionable">
             <section class="message -right">
                 <div id="principal"
                     class="animate__animated animate__zoomIn nes-balloon from-right  with-title is-rounded"
@@ -564,7 +569,7 @@
             </section>
         </form>
     </div>
-<script src="js.js"></script>
+    <script src="js.js"></script>
     <script>
         var a = 0;
         var v = 0;
