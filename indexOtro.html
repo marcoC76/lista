@@ -6,6 +6,16 @@
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 <style>
+    @font-face {
+        font-family: "Pixel";
+        src: url("FreePixel.woff");
+    }
+
+    @font-face {
+        font-family: "Poke";
+        src: url("Pokemon-Classic.woff");
+    }
+
     body {
         background-image: url("images/fondo2.jpg");
         background-repeat: no-repeat;
@@ -125,8 +135,9 @@
     }
 
     img {
-        width: 20%;
-        margin-left: 90%;
+        width: 30%;
+        margin-left: 85%;
+        filter: drop-shadow(0 10px 5px #333)
     }
 
     .no-seleccionable {
@@ -141,6 +152,11 @@
         flex-basis: 0;
         flex-grow: 3;
     }
+    .fuente{
+        font-family: "Poke";
+        font-size: 1em;
+        font-weight: bold;
+    }
 
     @media (max-width: 600px) {
         .container {
@@ -148,8 +164,8 @@
         }
 
         img {
-            width: 25%;
-            margin-left: 80%;
+            width: 35%;
+            margin-left: 70%;
         }
 
     }
@@ -171,16 +187,16 @@
                         Estilo de aprendizaje</h1>
                     <!-- One "tab" for each step in the form: -->
                     <div class="tab animate__animated animate__fadeInLeft animate__delay-2s ">
-                        <p class="">
-                            El numero de estrellas refleja tu identifiacion con cada frase:
+                        <p class="fuente">
+                            El número de estrellas refleja tu identifiación con cada frase:
                         </p>
-                        <p>
+                        <p class="fuente">
                             <i class="nes-icon star"></i> = Menos identificado
                         </p>
-                        <p>
+                        <p class="fuente">
                             <i class="nes-icon star"></i><i class="nes-icon star"></i> = Medianamente identificado
                         </p>
-                        <p>
+                        <p class="fuente">
                             <i class="nes-icon star"></i><i class="nes-icon star"></i><i class="nes-icon star"></i> =
                             Más identificado
                         </p>
@@ -494,7 +510,7 @@
                     <div class="tab">
                         <div>
                             <label class="animate__animated animate__zoomInLeft" for="a5">Cuando leo en silencio, me
-                                digo cada palabra a mi mismo</label>
+                                digo cada palabra a mí mismo</label>
                             <div class="nes-select is-dark animate__animated animate__zoomInLeft">
                                 <select id="a5" class="icons" onchange="auditivo5(value);">
                                     <option value="0" disabled selected>Escoge uno...</option>
@@ -597,14 +613,14 @@
                         <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
                     </div>
                 </div>
-                <img src="images/yo.gif" alt="" srcset="">
+                <img src="images/yoAnim.gif" alt="" srcset="">
             </section>
         </form>
     </div>
     <script src="js.js"></script>
     <script>
-        var id="";
-        var nom="";
+        var id = "";
+        var nom = "";
         var a = 0;
         var v = 0;
         var k = 0;
@@ -725,7 +741,7 @@
         }
 
         function resultados() {
-            id= document.getElementById('id').value;
+            id = document.getElementById('id').value;
             nom = document.getElementById('ApellidoPaterno').value;
             a = a1 + a2 + a3 + a4 + a5;
             v = v1 + v2 + v3 + v4 + v5;
