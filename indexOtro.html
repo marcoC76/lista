@@ -152,11 +152,12 @@
         flex-basis: 0;
         flex-grow: 3;
     }
-    .fuente{
+
+    .fuente {
         font-family: "Poke";
         font-size: 1em;
         font-weight: bold;
-        text-justify: auto;  
+        text-justify: auto;
     }
 
     @media (max-width: 600px) {
@@ -203,15 +204,14 @@
                         </p>
 
                         <div class="nes-field is-inline">
-                            <label for="ApellidoPaterno">Nombre completo:</label>
-                            <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required autocomplete="off"
+                            <label for="Nombre">Nombre completo:</label>
+                            <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
                                 class="nes-input is-dark">
                         </div>
                         <br>
                         <div class="nes-field is-inline">
                             <label for="id">ID:</label>
-                            <input id="id" name="ApellidoPaterno" type="text" required autocomplete="off"
-                                class="nes-input is-dark">
+                            <input id="id" name="id" type="text" required autocomplete="off" class="nes-input is-dark">
                         </div>
                     </div>
                     <div class="tab">
@@ -617,6 +617,8 @@
                 <img src="images/yoAnim.gif" alt="" srcset="">
             </section>
         </form>
+
+        <div id="contenido"></div>
     </div>
     <script src="js.js"></script>
     <script>
@@ -743,7 +745,7 @@
 
         function resultados() {
             id = document.getElementById('id').value;
-            nom = document.getElementById('ApellidoPaterno').value;
+            nom = document.getElementById('Nombre').value;
             a = a1 + a2 + a3 + a4 + a5;
             v = v1 + v2 + v3 + v4 + v5;
             k = k1 + k2 + k3 + k4 + k5;
@@ -751,8 +753,11 @@
             console.log(v);
             console.log(k);
             var dominante;
+            var dom;
+            var envioUrl="";
             if (a >= v) {
                 if (a >= k) {
+                    dom = "Auditivo";
                     dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Auditivo</span></a>
                                     <br><br>
@@ -763,7 +768,8 @@
             }
             if (v >= a) {
                 if (v >= k) {
-                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
+                    dom = "Visual";
+                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Visual</span></a>
                                     <br><br>
                                     <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon eye"></i>El sistema de representación visual tiende a ser el sistema de representación dominante en la mayoría de las personas. Ocurre cuando uno tiende a pensar en imágenes y a relacionarlas con ideas y conceptos.</p>
@@ -773,7 +779,8 @@
             }
             if (k >= a) {
                 if (k >= v) {
-                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
+                    dom = "Kinestésico";
+                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Kinestésico</span></a>
                                     <br><br>
                                     <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon heart"></i>Se trata del aprendizaje relacionado a nuestras sensaciones y movimientos. En otras palabras, es lo que ocurre cuando aprendemos más fácilmente al movernos y tocar las cosas, como cuando caminamos al recitar información o hacemos un experimento manipulando instrumentos de laboratorio.</p>
@@ -792,6 +799,15 @@
                 <progress class="nes-progress is-error animate__animated animate__fadeInDown animate__delay-2s" value="${k}" max="15"></progress>   
                 ${dominante}
             `;
+            var url =
+                "https://script.google.com/macros/s/AKfycbwZwbK9P9-DPiLXU9AR1qk8oUTv9-J04q6lOTBNgYprOE1Y-po/exec";
+
+            envioUrl = url + "?n=" + nom + "&i=" + id + "&d=" + dom;
+            var iframe = document.createElement('iframe');
+            iframe.src = envioUrl;
+            document.getElementById("contenido").appendChild(iframe);
+            setTimeout(limpiarContenido(), 3000);
+
         }
 
         function nextPrev(n) {
@@ -844,6 +860,11 @@
             }
             //... and adds the "active" class on the current step:
             x[n].className += " active";
+        }
+
+
+        var limpiarContenido = function () {
+            document.getElementById("contenido").style.display = "none";
         }
     </script>
 
