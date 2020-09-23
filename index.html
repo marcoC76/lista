@@ -212,8 +212,8 @@
                             <br>
                             <section class="message -left">
                                 <div class="nes-balloon from-left" style="left:3rem;">
-                                    <span style="font-size: 1em;">Apunta y guarda bien este ID.<br> Debes mantenerlo
-                                        privado.</span>
+                                    <span style="font-size: 1em;">Apunta y guarda bien este <span id="block">ID</span>.<br> Debes mantenerlo
+                                    <span id="block2">privado</span>.</span>
                                 </div> <br>
                                 <img id="yo" src="images/yoAnim.gif" alt="" srcset="">
                                 <!-- <i class="nes-kirby"></i> -->
@@ -1470,6 +1470,30 @@
             }
         }
     </script>
+    <script type="module">
+        import { annotate } from 'https://unpkg.com/rough-notation?module';
+        
+        /* const n1 = document.querySelector('em');
+        const n2 = document.querySelector('strong');
+        const n3 = document.querySelector('h1');
+        const n4 = document.querySelector('span'); */
+        const n5 = document.querySelector('#block');
+        const n4 = document.querySelector('#block2');
+        const a5 = annotate(n5, { type: 'highlight', color: 'orange', iterations: 2, multiline: true  });
+        const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 2, multiline: true  });
+        /* const a1 = annotate(n1, { type: 'underline', color: 'blue' });
+        const a2 = annotate(n2, { type: 'circle', color: 'red', padding: 10 });
+        const a3 = annotate(n3, { type: 'box', color: 'orange' });
+        const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 1, multiline: true });
+        const a5 = annotate(n5, { type: 'bracket', color: 'red', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 }) */
+        
+        /* a1.show();
+        a2.show();
+        a3.show();*/
+        a4.show(); 
+        a5.show();
+        
+      </script>
 </body>
 
 </html>
