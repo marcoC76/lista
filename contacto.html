@@ -186,36 +186,53 @@
 
                     <h1 style="text-transform: uppercase; font-size: 1.5em;"
                         class="title animate__animated animate__fadeInLeft animate__delay-1s">
-                        Estilo de aprendizaje</h1>
+                        Datos de contacto</h1>
                     <!-- One "tab" for each step in the form: -->
                     <div class="tab animate__animated animate__fadeInLeft animate__delay-2s ">
+                        <br>
                         <p class="fuente">
-                            El número de span estrellas refleja tu identifiación con cada frase:
+                            Proporciona los siguientes datos:
                         </p>
-                        <p class="fuente">
-                            <i class="nes-icon star"></i> = Menos identificado
-                        </p>
-                        <p class="fuente">
+                        <br>
+                        <div class="nes-container is-rounded is-dark">
+                            <p class="fuente">
+                                Tus datos solo seran compartidos con los intengrantes del equipo al que seas asignado
+                            </p>
+                        </div>
+                        <br>
+                        <!--  <p class="fuente">
                             <i class="nes-icon star"></i><i class="nes-icon star"></i> = Medianamente identificado
                         </p>
                         <p class="fuente">
                             <i class="nes-icon star"></i><i class="nes-icon star"></i><i class="nes-icon star"></i> =
                             Más identificado
-                        </p>
+                        </p> -->
 
                         <div class="nes-field is-inline">
                             <label for="Nombre">Nombre completo:</label>
-                            <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
+                            <input id="Nombre" name="Nombre" type="text"  autocomplete="off"
                                 class="nes-input is-dark">
                         </div>
                         <br>
                         <div class="nes-field is-inline">
-                            <label for="id">Grupo:</label>
-                            <input id="id" name="id" type="text" required autocomplete="off" class="nes-input is-dark">
+                            <label for="grupo">Grupo:</label>
+                            <input id="grupo" name="grupo" type="text" maxlength="1"  autocomplete="off"
+                                class="nes-input is-dark" placeholder="Solo la letra">
                         </div>
                     </div>
                     <div class="tab">
-                        <div>
+                        <div class="nes-field is-inline">
+                            <label for="correo1">Correo:</label>
+                            <input id="correo1" name="correo1" type="text"  autocomplete="off"
+                                class="nes-input is-dark">
+                        </div>
+                        <br>
+                        <div class="nes-field is-inline">
+                            <label for="correo2">Correo alterno:</label>
+                            <input id="correo2" name="correo2" type="text" placeholder="opcional" autocomplete="off"
+                                class="nes-input is-dark">
+                        </div>
+                        <!-- <div>
                             <label class="animate__animated animate__zoomInLeft" for="a1">Yo puedo recordar algo si lo
                                 digo en vos alta</label>
                             <div class="nes-select is-dark animate__animated animate__zoomInLeft">
@@ -285,10 +302,21 @@
                                     </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="tab">
-                        <div>
+                        <div class="nes-field is-inline">
+                            <label for="celular">Numero de celular:</label>
+                            <input id="celular" name="celular" type="text" placeholder="opcional" autocomplete="off"
+                                class="nes-input is-dark">
+                        </div>
+                        <br>
+                        <div class="nes-field is-inline">
+                            <label for="numero">Numero alternativo:</label>
+                            <input id="numero" name="numero" type="text" placeholder="opcional" autocomplete="off"
+                                class="nes-input is-dark">
+                        </div>
+                        <!--   <div>
                             <label class="animate__animated animate__zoomInLeft" for="a2">Disfruto aprendiendo cuando
                                 tengo a alguien que me explique
                                 cosas</label>
@@ -358,11 +386,16 @@
                                     </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="tab">
-                        <div>
+                        <div class="nes-field is-inline">
+                            <label for="redes">Redes sociales:</label>
+                            <input id="redes" name="redes" type="text" placeholder="facebook,twiter, etc..."
+                                autocomplete="off" class="nes-input is-dark">
+                        </div>
+                        <!-- <div>
                             <label class="animate__animated animate__zoomInLeft" for="a3">
                                 Prefiero escuchar la música para aprenderme la letra en lugar de
                                 leerla</label>
@@ -433,10 +466,15 @@
                                     </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="tab">
-                        <div>
+                        <div class="nes-container is-rounded is-dark">
+                            <p class="fuente">
+                                Tus datos solo seran compartidos con los intengrantes del equipo al que seas asignado
+                            </p>
+                        </div>
+                        <!-- <div>
                             <label class="animate__animated animate__zoomInLeft" for="a4">Escucho musica todo el
                                 tiempo</label>
                             <div class="nes-select is-dark animate__animated animate__zoomInLeft">
@@ -506,9 +544,9 @@
                                     </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="tab">
+                    <!--  <div class="tab">
                         <div>
                             <label class="animate__animated animate__zoomInLeft" for="a5">Cuando leo en silencio, me
                                 digo cada palabra a mí mismo</label>
@@ -583,10 +621,9 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="tab">Avatar:
                     <p><input placeholder="Avatar..." oninput="this.className = ''" name="favatar"></p>
-    
                 </div> -->
                     <br>
                     <div style="overflow:auto;">
@@ -609,8 +646,8 @@
                                 class="nes-icon coin"></i></span>
                         <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
                                 class="nes-icon coin"></i></span>
-                        <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
-                                class="nes-icon coin"></i></span>
+                        <!-- <span class="step animate__animated animate__zoomInUp animate__delay-2s"><i
+                                class="nes-icon coin"></i></span> -->
                         <!-- <span class="step"><i class="nes-icon coin"></i></span> -->
                     </div>
                 </div>
@@ -622,30 +659,19 @@
     </div>
     <script src="js.js"></script>
     <script>
-        var id = "";
+        var grupo = "";
         var nom = "";
-        var a = 0;
-        var v = 0;
-        var k = 0;
+        var correo;
+        var correo2;
+        var cel;
+        var tel;
+        var redes;
 
-        var a1, a2, a3, a4, a5,
-            v1, v2, v3, v4, v5,
-            k1, k2, k3, k4, k5;
+
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
 
-        /* function sumar() {
-           var i
-            for (i = 0; i < document.regForm.answer-dark.length; i++) {
-                if (document.regForm.answer-dark[i].checked) {
-                    a = a + document.regForm.answer-dark[i].value;
-                    break;
 
-                }
-            }
-           
-            console.log(a);
-        } */
 
         function showTab(n) {
             // This function will display the specified tab of the form...
@@ -668,146 +694,49 @@
             fixStepIndicator(n)
         }
 
-        function auditivo1(value) {
-            a1 = parseInt(value);
-            console.log(a1);
-        }
 
-        function auditivo2(value) {
-            a2 = parseInt(value);
-            console.log(a2);
-        }
-
-        function auditivo3(value) {
-            a3 = parseInt(value);
-            console.log(a3);
-        }
-
-        function auditivo4(value) {
-            a4 = parseInt(value);
-            console.log(a4);
-        }
-
-        function auditivo5(value) {
-            a5 = parseInt(value);
-            console.log(a5);
-        }
-
-        function visual1(value) {
-            v1 = parseInt(value);
-            console.log(v1);
-        }
-
-        function visual2(value) {
-            v2 = parseInt(value);
-            console.log(v2);
-        }
-
-        function visual3(value) {
-            v3 = parseInt(value);
-            console.log(v3);
-        }
-
-        function visual4(value) {
-            v4 = parseInt(value);
-            console.log(v4);
-        }
-
-        function visual5(value) {
-            v5 = parseInt(value);
-            console.log(v5);
-        }
-
-        function kines1(value) {
-            k1 = parseInt(value);
-            console.log(k1);
-        }
-
-        function kines2(value) {
-            k2 = parseInt(value);
-            console.log(k2);
-        }
-
-        function kines3(value) {
-            k3 = parseInt(value);
-            console.log(k3);
-        }
-
-        function kines4(value) {
-            k4 = parseInt(value);
-            console.log(k4);
-        }
-
-        function kines5(value) {
-            k5 = parseInt(value);
-            console.log(k5);
-        }
 
         function resultados() {
-            id = document.getElementById('id').value;
+            grupo = document.getElementById('grupo').value;
             nom = document.getElementById('Nombre').value;
-            a = a1 + a2 + a3 + a4 + a5;
-            v = v1 + v2 + v3 + v4 + v5;
-            k = k1 + k2 + k3 + k4 + k5;
-            console.log(a);
-            console.log(v);
-            console.log(k);
-            var dominante;
-            var dom;
-            var envioUrl = "";
-            if (a >= v) {
-                if (a >= k) {
-                    dom = "Auditivo";
-                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
-                                    <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Auditivo</span></a>
-                                    <br><br>
-                                    <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon bomb"></i>Las personas que son más auditivas tienden a recordar mejor la información siguiendo y rememorando una explicación oral.</p>
-                                    
-                                `;
-                }
-            }
-            if (v >= a) {
-                if (v >= k) {
-                    dom = "Visual";
-                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
-                                    <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Visual</span></a>
-                                    <br><br>
-                                    <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon eye"></i>El sistema de representación visual tiende a ser el sistema de representación dominante en la mayoría de las personas. Ocurre cuando uno tiende a pensar en imágenes y a relacionarlas con ideas y conceptos.</p>
-                                   
-                                    `;
-                }
-            }
-            if (k >= a) {
-                if (k >= v) {
-                    dom = "Kinestésico";
-                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
-                                    <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Kinestésico</span></a>
-                                    <br><br>
-                                    <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon heart"></i>Se trata del aprendizaje relacionado a nuestras sensaciones y movimientos. En otras palabras, es lo que ocurre cuando aprendemos más fácilmente al movernos y tocar las cosas, como cuando caminamos al recitar información o hacemos un experimento manipulando instrumentos de laboratorio.</p>
-                                   
-                                `;
-                }
-            }
-            document.getElementById("principal").innerHTML = `
-                <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
-                    Resultados</h1>
-                Auditivo:
-                <progress class="nes-progress is-success animate__animated animate__fadeInDown" value="${a}" max="15"></progress>
-                Visual:
-                <progress class="nes-progress is-warning animate__animated animate__fadeInDown animate__delay-1s" value="${v}" max="15"></progress>
-                Kinestesico:
-                <progress class="nes-progress is-error animate__animated animate__fadeInDown animate__delay-2s" value="${k}" max="15"></progress>   
-                ${dominante}
-            `;
-            var url =
-                "https://script.google.com/macros/s/AKfycbwZwbK9P9-DPiLXU9AR1qk8oUTv9-J04q6lOTBNgYprOE1Y-po/exec";
+            correo = document.getElementById('correo1').value;
+            correo2 = document.getElementById('correo2').value;
+            cel = document.getElementById('celular').value;
+            tel = document.getElementById('numero').value;
+            redes = document.getElementById('redes').value;
 
-            envioUrl = url + "?n=" + nom + "&i=" + id + "&d=" + dom;
+
+            var envioUrl = "";
+            var url =
+                "https://script.google.com/macros/s/AKfycbwn61ttgpqHMEPWUXj6GjrxLbKhBAjGaCzCCmGS/exec";
+                
+
+            envioUrl = url + "?n=" + nom + "&g=" + grupo + "&c=" + correo + "&c2=" + correo2 + "&ce=" + cel + "&te=" + tel + "&r=" + redes;
             var iframe = document.createElement('iframe');
             iframe.src = envioUrl;
             document.getElementById("contenido").appendChild(iframe);
             setTimeout(limpiarContenido(), 3000);
 
+            document.getElementById("principal").innerHTML = `
+            <div class="nes-container is-rounded is-dark">
+                <span class="nes-text is-success">
+                    Datos enviados, pronto recibiras el contacto de tus compañeros de equipo.
+                </span>
+            </div>
+                <br>
+                Ahora contesta el diagnostico de estilos de aprendizaje:
+                <br>
+                <center>
+                    <input class="nes-btn is-success" onclick="vak();" type="button" value="Cuestionario VAK"
+                    id="nuevo" />
+                </center> 
+            `;
+            
+
+        }
+
+        function vak() {
+            location.replace("indexOtro.html")
         }
 
         function nextPrev(n) {
@@ -867,7 +796,7 @@
             document.getElementById("contenido").style.display = "none";
         }
     </script>
-    
+
 </body>
 
 </html>
