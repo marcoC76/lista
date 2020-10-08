@@ -553,7 +553,7 @@ Equipo = "SinEquipo";
                 document.getElementById("Nombre").value === "" ||
                 document.getElementById("Nick").value === "" ||
                 document.getElementById("Avatar").value === "" ||
-                document.getElementById("Equipo").value === "" ||
+                /* document.getElementById("Equipo").value === "" || */
                 document.getElementById("Grupo").value === "" ||
                 document.getElementById("ID").value === "") {
 
@@ -600,9 +600,7 @@ Equipo = "SinEquipo";
                                         </a>
                                         <br>
                                         <br> Tu Nombre de Usuario es: <a href="#" class="nes-badge"> <span class="is-dark">${Nick}</span></a>
-                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br><br> Tu
-                                        Clan es:
-                                        <a href="#" class="nes-badge"> <span class="is-dark">${Equipo}</span></a></h4>
+                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br><br> </h4>
                                     <br> <br>
                                     
                                 </div>
@@ -1454,21 +1452,21 @@ Equipo = "SinEquipo";
                 }
             ];
 
-            var ddlCustomers = document.getElementById("Equipo");
+           // var ddlCustomers = document.getElementById("Equipo");
 
             //Add the Options to the DropDownList.
-            for (var i = 0; i < Clanes.length; i++) {
-                var option = document.createElement("OPTION");
+            //for (var i = 0; i < Clanes.length; i++) {
+               // var option = document.createElement("OPTION");
 
                 //Set Customer Name in Text part.
-                option.innerHTML = Clanes[i].Nombre;
+              //  option.innerHTML = Clanes[i].Nombre;
 
                 //Set CustomerId in Value part.
-                option.value = Clanes[i].Nombre;
+            //    option.value = Clanes[i].Nombre;
 
                 //Add the Option element to DropDownList.
-                ddlCustomers.options.add(option);
-            }
+              //  ddlCustomers.options.add(option);
+            //}
         }
     </script>
     <script type="module">
