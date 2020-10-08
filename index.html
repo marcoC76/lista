@@ -181,14 +181,14 @@
 
                             </div>
                             <br>
-                            <label for="Equipo">Clan:</label>
+                           <! --<label for="Equipo">Clan:</label>
                             <div class="nes-select is-dark">
                                 <select id="Equipo" name="Equipo" required>
                                     <option value="" disabled selected>El nombre de tu
                                         equipo...</option>
                                 </select>
 
-                            </div>
+                            </div>-->
                             <br>
                             <label for="Grupo">Grupo:</label>
                             <div class="nes-select is-dark">
@@ -525,7 +525,7 @@
         var enviarDatos = function () {
             var url =
                 "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
-
+Equipo = "SinEquipo"; 
             envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
                 "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
             var obj1 = {
@@ -566,7 +566,7 @@
                 Nombre = document.getElementById("Nombre").value;
                 Nick = document.getElementById("Nick").value;
                 Avatar = document.getElementById("Avatar").value;
-                Equipo = document.getElementById("Equipo").value;
+              //  Equipo = document.getElementById("Equipo").value;
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
                 enviarDatos();
