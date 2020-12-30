@@ -100,7 +100,7 @@
 
                         <!-- <h2>Se terminó el registro</h2> -->
                         <div class="row">
-                        <!--     <div class="nes-field is-inline">
+                            <div class="nes-field is-inline">
                                 <label for="ApellidoPaterno">Apellido Paterno:</label>
                                 <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required
                                     autocomplete="off" class="nes-input is-dark">
@@ -121,7 +121,7 @@
                             <div class="nes-field is-inline">
                                 <label for="Nick">Nombre de Usuario:</label>
                                 <input id="Nick" name="Nick" type="text" required autocomplete="off"
-                                    class="nes-input is-dark"> -->
+                                    class="nes-input is-dark">
                                 <!-- <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de
                                     usuario o apodo que te identifique</span> -->
                             </div>
@@ -181,16 +181,16 @@
 
                             </div>
                             <br>
-                           <!-- <label for="Equipo">Clan:</label>
+                            <label for="Equipo">Clan:</label>
                             <div class="nes-select is-dark">
                                 <select id="Equipo" name="Equipo" required>
                                     <option value="" disabled selected>El nombre de tu
                                         equipo...</option>
                                 </select>
 
-                            </div> -->
+                            </div>
                             <br>
-                            <!--<label for="Grupo">Grupo:</label>
+                            <label for="Grupo">Grupo:</label>
                             <div class="nes-select is-dark">
                                 <select id="Grupo" required onchange="grupo(this.value)">
                                     <option value="" disabled selected>Escoge un grupo...</option>
@@ -212,12 +212,13 @@
                             <br>
                             <section class="message -left">
                                 <div class="nes-balloon from-left" style="left:3rem;">
-                                    <span style="font-size: 1em;">Apunta y guarda bien este <span id="block">ID</span>.<br> Debes mantenerlo
-                                    <span id="block2">privado</span>.</span>
+                                    <span style="font-size: 1em;">Apunta y guarda bien este <span
+                                            id="block">ID</span>.<br> Debes mantenerlo
+                                        <span id="block2">privado</span>.</span>
                                 </div> <br>
-                                <img id="yo" src="images/yoAnim.gif" alt="" srcset=""> -->
+                                <img id="yo" src="images/yoAnim.gif" alt="" srcset="">
                                 <!-- <i class="nes-kirby"></i> -->
-                         <!--    </section>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -233,7 +234,7 @@
 
 
             </form>
-        </div> -->
+        </div>
         <!--  <center>
             <input class="btn btn-large white black-text" onclick="download()" type="button" value="Descargar"
                 id="descargar" />
@@ -525,7 +526,7 @@
         var enviarDatos = function () {
             var url =
                 "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
-Equipo = "SinEquipo"; 
+            Equipo = "SinEquipo";
             envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
                 "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
             var obj1 = {
@@ -566,7 +567,7 @@ Equipo = "SinEquipo";
                 Nombre = document.getElementById("Nombre").value;
                 Nick = document.getElementById("Nick").value;
                 Avatar = document.getElementById("Avatar").value;
-              //  Equipo = document.getElementById("Equipo").value;
+                //  Equipo = document.getElementById("Equipo").value;
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
                 enviarDatos();
@@ -606,10 +607,10 @@ Equipo = "SinEquipo";
                                 </div>
                                 <br>
                             `;
-                            /* <center>
-                                        <input class="nes-btn is-success" onclick="vak();" type="button" value="Cuestionario VAK"
-                                            id="nuevo" />
-                                    </center> */
+                /* <center>
+                            <input class="nes-btn is-success" onclick="vak();" type="button" value="Cuestionario VAK"
+                                id="nuevo" />
+                        </center> */
                 document.getElementById("form").innerHTML = salida;
             }
         }
@@ -721,7 +722,7 @@ Equipo = "SinEquipo";
 
         function PopulateDropDownList() {
             //Build an array containing Customer records.
-            var Clanes = [{
+            var Clanes = [/* {
                     "Nombre": "Abadejo"
                 },
                 {
@@ -1449,50 +1450,224 @@ Equipo = "SinEquipo";
                 },
                 {
                     "Nombre": "Zorro"
+                } */
+                {
+                    "Nombre": "Abeja"
+                },
+                {
+                    "Nombre": "Águila"
+                },
+                {
+                    "Nombre": "Araña"
+                },
+                {
+                    "Nombre": "Bisonte"
+                },
+                {
+                    "Nombre": "Búfalo "
+                },
+                {
+                    "Nombre": "Cabra"
+                },
+                {
+                    "Nombre": "Carnero"
+                },
+                {
+                    "Nombre": "Castor"
+                },
+                {
+                    "Nombre": "Cerdo"
+                },
+                {
+                    "Nombre": "Cerbero"
+                },
+                {
+                    "Nombre": "Cobra"
+                },
+                {
+                    "Nombre": "Cocodrilo"
+                },
+                {
+                    "Nombre": "Conejo"
+                },
+                {
+                    "Nombre": "Cuervo"
+                },
+                {
+                    "Nombre": "Dinosaurio"
+                },
+                {
+                    "Nombre": "Dragón"
+                },
+                {
+                    "Nombre": "Elefante"
+                },
+                {
+                    "Nombre": "Esfinge"
+                },
+                {
+                    "Nombre": "Fénix"
+                },
+                {
+                    "Nombre": "Foca"
+                },
+                {
+                    "Nombre": "Gallo "
+                },
+                {
+                    "Nombre": "Gato"
+                },
+                {
+                    "Nombre": "Goblin"
+                },
+                {
+                    "Nombre": "Guepardo"
+                },
+                {
+                    "Nombre": "Halcón"
+                },
+                {
+                    "Nombre": "Hámster"
+                },
+                {
+                    "Nombre": "Hiena"
+                },
+                {
+                    "Nombre": "Jaguar"
+                },
+                {
+                    "Nombre": "Jirafa"
+                },
+                {
+                    "Nombre": "Koala"
+                },
+                {
+                    "Nombre": "Komodo"
+                },
+                {
+                    "Nombre": "León"
+                },
+                {
+                    "Nombre": "Lince"
+                },
+                {
+                    "Nombre": "Lobo"
+                },
+                {
+                    "Nombre": "Mamut"
+                },
+                {
+                    "Nombre": "Mapache"
+                },
+                {
+                    "Nombre": "Orca"
+                },
+                {
+                    "Nombre": "Oso"
+                },
+                {
+                    "Nombre": "Paloma"
+                },
+                {
+                    "Nombre": "Panda"
+                },
+                {
+                    "Nombre": "Pantera"
+                },
+                {
+                    "Nombre": "Pato"
+                },
+                {
+                    "Nombre": "Pegaso"
+                },
+                {
+                    "Nombre": "Perico"
+                },
+                {
+                    "Nombre": "Perro"
+                },
+                {
+                    "Nombre": "Pulpo"
+                },
+                {
+                    "Nombre": "Raptor"
+                },
+                {
+                    "Nombre": "Rinoceronte"
+                },
+                {
+                    "Nombre": "Tiburón"
+                },
+                {
+                    "Nombre": "Tigre"
+                },
+                {
+                    "Nombre": "Toro"
+                },
+                {
+                    "Nombre": "Tortuga"
+                },
+                {
+                    "Nombre": "Tucán"
+                },
+                {
+                    "Nombre": "Unicornio"
+                },
+                {
+                    "Nombre": "Vaca"
+                },
+                {
+                    "Nombre": "Venado"
+                },
+                {
+                    "Nombre": "Yeti"
+                },
+                {
+                    "Nombre": "Zorro"
                 }
             ];
 
-           // var ddlCustomers = document.getElementById("Equipo");
+            var ddlCustomers = document.getElementById("Equipo");
 
             //Add the Options to the DropDownList.
-            //for (var i = 0; i < Clanes.length; i++) {
-               // var option = document.createElement("OPTION");
+            for (var i = 0; i < Clanes.length; i++) {
+                var option = document.createElement("OPTION");
 
                 //Set Customer Name in Text part.
-              //  option.innerHTML = Clanes[i].Nombre;
+                option.innerHTML = Clanes[i].Nombre;
 
                 //Set CustomerId in Value part.
-            //    option.value = Clanes[i].Nombre;
+                option.value = Clanes[i].Nombre;
 
                 //Add the Option element to DropDownList.
-              //  ddlCustomers.options.add(option);
-            //}
+                ddlCustomers.options.add(option);
+            }
         }
     </script>
     <script type="module">
         import { annotate } from 'https://unpkg.com/rough-notation?module';
-        
+
         /* const n1 = document.querySelector('em');
         const n2 = document.querySelector('strong');
         const n3 = document.querySelector('h1');
         const n4 = document.querySelector('span'); */
         const n5 = document.querySelector('#block');
         const n4 = document.querySelector('#block2');
-        const a5 = annotate(n5, { type: 'highlight', color: 'orange', iterations: 2, multiline: true  });
-        const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 2, multiline: true  });
+        const a5 = annotate(n5, { type: 'highlight', color: 'orange', iterations: 2, multiline: true });
+        const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 2, multiline: true });
         /* const a1 = annotate(n1, { type: 'underline', color: 'blue' });
         const a2 = annotate(n2, { type: 'circle', color: 'red', padding: 10 });
         const a3 = annotate(n3, { type: 'box', color: 'orange' });
         const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 1, multiline: true });
         const a5 = annotate(n5, { type: 'bracket', color: 'red', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 }) */
-        
+
         /* a1.show();
         a2.show();
         a3.show();*/
-        a4.show(); 
+        a4.show();
         a5.show();
-        
-      </script>
+
+    </script>
 </body>
 
 </html>
