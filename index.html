@@ -32,156 +32,7 @@
             grid-row-gap: 0px;
         }
 
-        .card:before,
-        .card:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            background-image: linear-gradient(115deg,
-                    transparent 0%,
-                    rgb(0, 231, 255) 30%,
-                    rgb(255, 0, 231) 70%,
-                    transparent 100%);
-            background-position: 0% 0%;
-            background-repeat: no-repeat;
-            background-size: 300% 300%;
-            mix-blend-mode: color-dodge;
-            opacity: 0.2;
-            z-index: 0;
-           
-        }
-
-        .card:after {
-            /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");*/
-            background-image: url("https://i.pinimg.com/originals/07/f7/27/07f72772fee4f51adcf8f9aa9fa1a8e0.gif");
-            background-position: center;
-            background-size: 180%;
-            mix-blend-mode: color-dodge;
-            opacity: 0.2;
-            z-index: 1000;
-            
-        }
-
-        .card.active:before {
-            opacity: 1;
-            animation: none;
-            transition: none;
-            background-image: linear-gradient(115deg,
-                    transparent 0%,
-                    transparent 25%,
-                    rgba(0, 231, 255, 0.7) 45%,
-                    rgba(255, 0, 231, 0.7) 55%,
-                    transparent 70%,
-                    transparent 100%);
-        }
-
-        .card:nth-of-type(1),
-        .card:nth-of-type(2),
-        .card:nth-of-type(3) {
-            box-shadow: 0 0 1px 1px rgba(white, 0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
-        }
-
-       /*  .card:nth-of-type(1),
-        .card:nth-of-type(2),
-        .card:nth-of-type(3) {
-
-            &:before,
-            &:after {
-                animation: none;
-                opacity: 1;
-            }
-        }
-
-        .card:nth-of-type(1) {
-
-            &:before,
-            &:after {
-                display: none;
-            }
-        }
-
-        .card:nth-of-type(2) {
-            background: none;
-
-            &:before {
-                display: none;
-            }
-        }
-
-        .card:nth-of-type(3) {
-            background: none;
-
-            &:before {
-                background-position: center;
-            }
-
-            &:after {
-                display: none;
-            }
-        }
-
-        .operator {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 45px;
-        } */
-
-        @keyframes holoSparkle {
-            0% {
-                opacity: 0;
-            }
-
-            12% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 0.5;
-            }
-
-            95% {
-                opacity: 0.2;
-            }
-        }
-
-        @keyframes holoGradient {
-            3% {
-                opacity: 0;
-            }
-
-            5% {
-                background-position: 0% 0%;
-            }
-
-            7% {
-                opacity: 0.5;
-            }
-
-            9% {
-                background-position: 100% 100%;
-            }
-
-            11% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0;
-                background-position: 100% 100%;
-            }
-
-            55% {
-                opacity: 0.3;
-            }
-
-            70% {
-                opacity: 0;
-                background-position: 0% 0%;
-            }
-        }
+       
 
         #ID {
             font-size: 2em;
@@ -242,7 +93,7 @@
         <br>
         <div class="div1">
 
-            <form id="form" class="no-seleccionable">
+            <form id="form" class="">
                 <div data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-max="3" data-tilt-speed="1000"
                     data-tilt-perspective="2000" class="nes-container  with-title is-rounded" style="background: rgba( 80, 165, 199, 0.35 );
                 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -269,15 +120,15 @@
                             </div>
                             <br>
                             <div class="nes-field is-inline">
-                                <label for="Nombre">Nombre/s:</label>
+                                <label for="Nombre">Nombre:</label>
                                 <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
-                                    class="nes-input is-dark">
+                                    class="nes-input is-dark" placeholder="Sin espacios">
                             </div>
                             <br>
                             <div class="nes-field is-inline">
                                 <label for="Nick">Nombre de Usuario:</label>
                                 <input id="Nick" name="Nick" type="text" required autocomplete="off"
-                                    class="nes-input is-dark">
+                                    class="nes-input is-dark" placeholder="Sin espacios" maxlength="7">
                                 <!-- <span class="helper-text" data-error="wrong" data-success="right">Un alias, nombre de
                                     usuario o apodo que te identifique</span> -->
                             </div>
@@ -350,11 +201,10 @@
                             <div class="nes-select is-dark">
                                 <select id="Grupo" required onchange="grupo(this.value)">
                                     <option value="" disabled selected>Escoge un grupo...</option>
-                                    <option value="A">1°A</option>
-                                    <option value="B">1°B</option>
-                                    <option value="C">1°C</option>
-                                    <option value="D">1°D</option>
-                                    <option value="E">1°E</option>
+                                    <option value="A">4°A</option>
+                                    <option value="B">4°B</option>
+                                    <option value="C">4°C</option>
+                                    <option value="D">4°D</option>
                                 </select>
                             </div>
                             <br>
@@ -401,6 +251,10 @@
     <script src='qrcode.js'></script>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script type="text/javascript">
+        $('input').keyup(function () { str = $(this).val(); str = str.replace(/\s/g, '_'); $(this).val(str); });
+
+
+
 
         var $cards = $(".card");
         var $style = $(".hover");
@@ -726,6 +580,7 @@
             /*  Equipo = "SinEquipo"; */
             envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
                 "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
+            /* envioUrl = envioUrl.trim(); */
             var obj1 = {
                 "ApellidoPaterno": ApellidoPaterno,
                 "ApellidoMaterno": ApellidoMaterno,
@@ -782,6 +637,7 @@
             function limpiar() {
                 alert("Haz sido registrado en la lista " + Nombre + ", tu ID es: " + ID + ". TOMA UNA CAPTURA DE PANTALLA DE LA SIGUIENTE INFORMACIÓN");
                 /* document.getElementById("form").reset(); */
+                var qrUrl = envioUrl.trim();
                 var salida = `
                                 <br>
                                 <div class="nes-container is-rounded with-title" style="background: rgba( 80, 165, 199, 0.35 );
@@ -789,10 +645,13 @@
                                 backdrop-filter: blur( 6.5px );
                                 -webkit-backdrop-filter: blur( 6.5px );">
                                     <h3 class="title"
-                                        style="font-size:1.25em;text-transform: uppercase; margin-top: -2rem; background-color:#48B8FA">Ficha de Registro</h3>
+                                        style="font-size:1.25em;text-transform: uppercase; margin-top: -2rem;background-color:#50A6C7;">Ficha de Registro</h3>
 
                                     <br>
-                                    <h4> Haz sido registrado en la lista con exito, guarda el QR como imagen o toma una captura de pantalla del mismo
+                                    <div class="nes-container is-rounded is-dark">
+                                    <h4> Haz sido registrado en la lista con exito, guarda el QR como imagen o toma una captura de pantalla del mismo</h4>
+                                    </div>
+                                       <br>
                                        <br>
                                        <center>
                                             <h2 class="is-dark ">
@@ -803,12 +662,13 @@
                                         <br> Tu Nombre de Usuario es: <a href="#" class="nes-badge"> <span class="is-dark">${Nick}</span></a>
                                         <br> Tu Nombre de Clan es: <a href="#" class="nes-badge"> <span class="is-dark">${Equipo}</span></a>
                                         <br> Tu Nombre de Grupo es: <a href="#" class="nes-badge"> <span class="is-dark">${Grupo}</span></a>
-                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br><br> </h4>
-                                    <br><br> 
+                                        <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br> 
+                                    <br>
                                        
-                                        <input id="text" type="password" value="${envioUrl}" style="width:100%;display:none" class="mt-4" />
+                                        <input id="text" type="text-area" value="${qrUrl}" style="width:100%;display:none" class="mt-4" />
                                         <center>
                                             <span class="is-dark">Clic decho sobre el qr para guardar como imagen</span>
+                                            <br>
                                             <br>
                                             <div id="qrcode" style="width:300px; height:300px; "></div>
                                         </center>
@@ -826,7 +686,7 @@
                 });
                 function makeCode() {
                     var elText = document.getElementById("text");
-
+                    console.log(elText.va);
                     if (!elText.value) {
                         //alert("Input a text");
                         elText.focus();
@@ -1698,7 +1558,7 @@
                     "Nombre": "Bisonte"
                 },
                 {
-                    "Nombre": "Búfalo "
+                    "Nombre": "Búfalo"
                 },
                 {
                     "Nombre": "Cabra"
@@ -1746,7 +1606,7 @@
                     "Nombre": "Foca"
                 },
                 {
-                    "Nombre": "Gallo "
+                    "Nombre": "Gallo"
                 },
                 {
                     "Nombre": "Gato"
