@@ -120,6 +120,10 @@
         box-shadow: -4px 0, 4px 0, 4px 4px #50a6c7, 0 4px, 8px 4px, 4px 8px, 8px 8px;
     }
 
+    .nes-balloon {
+        padding: 2rem 4rem !important;
+    }
+
     .nes-icon.star::before {
         content: "";
     }
@@ -181,8 +185,11 @@
         <form id="regForm" class="div1 no-seleccionable">
             <section class="message -right">
                 <div id="principal"
-                    class="animate__animated animate__zoomIn nes-balloon from-right  with-title is-rounded"
-                    style="background-color:#50a5c7d5">
+                    class="animate__animated animate__zoomIn nes-balloon from-right  with-title is-rounded" style="background: rgba( 80, 165, 199, 0.35 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 6.5px );
+                -webkit-backdrop-filter: blur( 6.5px );" data-tilt data-tilt-max="4" data-tilt-speed="1000"
+                    data-tilt-perspective="2000">
 
                     <h1 style="text-transform: uppercase; font-size: 1.5em;"
                         class="title animate__animated animate__fadeInLeft animate__delay-1s">
@@ -202,16 +209,17 @@
                             <i class="nes-icon star"></i><i class="nes-icon star"></i><i class="nes-icon star"></i> =
                             Más identificado
                         </p>
-
+                        <br>
                         <div class="nes-field is-inline">
                             <label for="Nombre">Nombre completo:</label>
                             <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
-                                class="nes-input is-dark">
+                                class="nes-input is-dark" placeholder="">
                         </div>
                         <br>
                         <div class="nes-field is-inline">
-                            <label for="id">Grupo:</label>
-                            <input id="id" name="id" type="text" required maxlength="1" placeholder="Solo la letra" autocomplete="off" class="nes-input is-dark">
+                            <label for="id">ID:</label>
+                            <input id="id" name="id" type="text" required maxlength="5" autocomplete="off"
+                                class="nes-input is-dark">
                         </div>
                     </div>
                     <div class="tab">
@@ -621,9 +629,15 @@
         <div id="contenido"></div>
     </div>
     <script src="js.js"></script>
+    <script src='jquery.min.js'></script>
+    <script src='qrcode.js'></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script>
+        $('input').keyup(function () { str = $(this).val(); str = str.replace(/\s/g, '_'); $(this).val(str); });
+
+
         var id = "";
-        var nom = "";
+        var nom = " ";
         var a = 0;
         var v = 0;
         var k = 0;
@@ -758,7 +772,7 @@
             if (a >= v) {
                 if (a >= k) {
                     dom = "Auditivo";
-                    dominante = `<br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
+                    dominante = `<br><br>TU ESTILO DOMINANTE ES: <a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Auditivo</span></a>
                                     <br><br>
                                     <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon bomb"></i>Las personas que son más auditivas tienden a recordar mejor la información siguiendo y rememorando una explicación oral.</p>
@@ -769,7 +783,7 @@
             if (v >= a) {
                 if (v >= k) {
                     dom = "Visual";
-                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
+                    dominante = `<br><br><br><br>TU ESTILO DOMINANTE ES: <a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Visual</span></a>
                                     <br><br>
                                     <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon eye"></i>El sistema de representación visual tiende a ser el sistema de representación dominante en la mayoría de las personas. Ocurre cuando uno tiende a pensar en imágenes y a relacionarlas con ideas y conceptos.</p>
@@ -780,13 +794,17 @@
             if (k >= a) {
                 if (k >= v) {
                     dom = "Kinestésico";
-                    dominante = `<br><br><br><br><a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
+                    dominante = `<br><br><br><br>TU ESTILO DOMINANTE ES: <a href="#" class="nes-badge animate__animated animate__bounceIn animate__delay-3s">
                                     <span class="is-dark animate__animated animate__bounceIn animate__delay-3s">Kinestésico</span></a>
                                     <br><br>
                                     <p class="animate__animated animate__bounceIn animate__delay-3s"><i class="nes-icon heart"></i>Se trata del aprendizaje relacionado a nuestras sensaciones y movimientos. En otras palabras, es lo que ocurre cuando aprendemos más fácilmente al movernos y tocar las cosas, como cuando caminamos al recitar información o hacemos un experimento manipulando instrumentos de laboratorio.</p>
                                    
                                 `;
                 }
+            }
+            if (dom == undefined) {
+                alert("ERROR: Debes contestar todas las preguntas :{");
+                window.location.reload();
             }
             document.getElementById("principal").innerHTML = `
                 <h1 style="text-transform: uppercase; background-color:#50A6C7; font-size: 1.5em;" class="title">
@@ -802,7 +820,7 @@
             var url =
                 "https://script.google.com/macros/s/AKfycbwZwbK9P9-DPiLXU9AR1qk8oUTv9-J04q6lOTBNgYprOE1Y-po/exec";
 
-            envioUrl = url + "?n=" + nom + "&i=" + id + "&d=" + dom;
+            envioUrl = url + "?n=" + nom + "&i=" + id + "&d=" + dom.substring(0,1);
             var iframe = document.createElement('iframe');
             iframe.src = envioUrl;
             document.getElementById("contenido").appendChild(iframe);
@@ -867,7 +885,7 @@
             document.getElementById("contenido").style.display = "none";
         }
     </script>
-    
+
 </body>
 
 </html>
