@@ -594,15 +594,15 @@
                 var html = '';
                 iframe.src = envioUrl;
                 document.getElementById("contenido").appendChild(iframe);
-                setTimeout(limpiarContenido(), 3000);
+                limpiarContenido(), 30000;
                 cuenta = cuenta + 1;
                 limpiar();
-                document.getElementById("ID").value = array2[cuenta];
-                document.getElementById("ID").focus();
+                /* document.getElementById("ID").value = array2[cuenta];
+                document.getElementById("ID").focus(); */
             }
 
             function limpiar() {
-                alert("Haz finalizado con la creacion de tu QR, seras redirijido");
+                alert("Haz finalizado");
                 /* document.getElementById("form").reset(); */
                 var qrUrl = envioUrl.trim();
                 var salida = `
