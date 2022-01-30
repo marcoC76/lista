@@ -94,7 +94,7 @@
         <div class="div1">
 
             <form id="form" class="">
-                <div data-tilt data-tilt-max="4" data-tilt-speed="1000" data-tilt-perspective="2000"
+                <div data-tilt data-tilt-max="0" data-tilt-speed="1000" data-tilt-perspective="2000"
                     class="nes-container  with-title is-rounded" style="background: rgba( 80, 165, 199, 0.35 );
                 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
                 backdrop-filter: blur( 6.5px );
@@ -201,12 +201,12 @@
                             <div class="nes-select is-dark">
                                 <select id="Grupo" required onchange="grupo(this.value)">
                                     <option value="" disabled selected>Escoge un grupo...</option>
-                                    <option value="A">1°A</option>
-                                    <option value="B">1°B</option>
-                                    <option value="C">1°C</option>
-                                    <option value="D">1°D</option>
-                                    <option value="E">1°E</option>
-                                    <option value="F">1°F</option>
+                                    <option value="A">4°A</option>
+                                    <option value="B">4°B</option>
+                                    <option value="C">4°C</option>
+                                    <option value="D">4°D</option>
+                                    <option value="E">4°E</option>
+                                    <!-- <option value="F">4°F</option> -->
                                 </select>
                             </div>
                             <br>
@@ -602,7 +602,7 @@
             }
 
             function limpiar() {
-                alert("Haz sido registrado en la lista " + Nombre + ", tu ID es: " + ID + ". TOMA UNA CAPTURA DE PANTALLA DE LA SIGUIENTE INFORMACIÓN");
+                alert("Haz finalizado con la creacion de tu QR, seras redirijido");
                 /* document.getElementById("form").reset(); */
                 var qrUrl = envioUrl.trim();
                 var salida = `
@@ -617,7 +617,7 @@
                                     <br>
                                     <div class="nes-container is-rounded is-dark">
                                         <center>
-                                            <p> Haz sido registrado en la lista con exito, guarda el QR como imagen o toma una captura de pantalla del mismo</p>
+                                            <p> Haz generado tu QR con exito, guarda el QR como imagen, toma una captura de pantalla del mismo o imprime como PDF</p>
                                         </center>
                                     </div>
                                        <br>
@@ -643,6 +643,7 @@
                                             <br>
                                             <br>
                                             <div id="qrcode" style="width:300px; height:300px; "></div>
+                                           
                                         </center>
                                 </div>
                                 <br>
