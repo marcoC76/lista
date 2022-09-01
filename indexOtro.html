@@ -210,7 +210,7 @@
                             Más identificado
                         </p>
                         <br>
-                        <div class="nes-field is-inline">
+                        <!-- <div class="nes-field is-inline">
                             <label for="Nombre">Nombre completo:</label>
                             <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
                                 class="nes-input is-dark" placeholder="">
@@ -220,7 +220,7 @@
                             <label for="id">ID:</label>
                             <input id="id" name="id" type="text" required maxlength="5" autocomplete="off"
                                 class="nes-input is-dark">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="tab">
                         <div>
@@ -758,8 +758,8 @@
         }
 
         function resultados() {
-            id = document.getElementById('id').value;
-            nom = document.getElementById('Nombre').value;
+            /* id = document.getElementById('id').value;
+            nom = document.getElementById('Nombre').value; */
             a = a1 + a2 + a3 + a4 + a5;
             v = v1 + v2 + v3 + v4 + v5;
             k = k1 + k2 + k3 + k4 + k5;
@@ -817,7 +817,7 @@
                 <progress class="nes-progress is-error animate__animated animate__fadeInDown animate__delay-2s" value="${k}" max="15"></progress>   
                 ${dominante}
             `;
-            var url =
+            /* var url =
                 "https://script.google.com/macros/s/AKfycbwZwbK9P9-DPiLXU9AR1qk8oUTv9-J04q6lOTBNgYprOE1Y-po/exec";
 
             envioUrl = url + "?n=" + nom + "&i=" + id + "&d=" + dom.substring(0,1);
@@ -825,7 +825,7 @@
             iframe.src = envioUrl;
             document.getElementById("contenido").appendChild(iframe);
             setTimeout(limpiarContenido(), 3000);
-
+ */
         }
 
         function nextPrev(n) {

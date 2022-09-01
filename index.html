@@ -126,6 +126,30 @@
                             </div>
                             <br>
                             <div class="nes-field is-inline">
+                                <label for="Edad">Edad:</label>
+                                <input id="Edad" name="Edad" type="number" required autocomplete="off"
+                                    class="nes-input is-dark" placeholder="Solo numeros">
+                            </div>
+                            <br>
+                            <div class="nes-field is-inline">
+                                <label for="Sexo">Sexo:</label>
+                                <input id="Sexo" name="Sexo" type="text" required autocomplete="off"
+                                    class="nes-input is-dark" placeholder="Sin espacios">
+                            </div>
+                            <br>
+                            <label for="VAK">Estilo de aprendizaje:</label>
+                            <div class="nes-select is-dark">
+                                <select id="VAK" required>
+                                    <option value="" disabled selected>Escoge un estilo...</option>
+                                    <option value="A">Auditivo </option>
+                                    <option value="K">Kinestesico </option>
+                                    <option value="V">Visual </option>
+                                </select>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="nes-field is-inline">
                                 <label for="Nick">Nombre de Usuario:</label>
                                 <input id="Nick" name="Nick" type="text" required autocomplete="off"
                                     class="nes-input is-dark" placeholder="Sin espacios" maxlength="7">
@@ -201,11 +225,14 @@
                             <div class="nes-select is-dark">
                                 <select id="Grupo" required onchange="grupo(this.value)">
                                     <option value="" disabled selected>Escoge un grupo...</option>
-                                    <option value="A">4°A</option>
-                                    <option value="B">4°B</option>
-                                    <option value="C">4°C</option>
-                                    <option value="D">4°D</option>
-                                    <option value="E">4°E</option>
+                                    <option value="A">1°A</option>
+                                    <option value="B">1°B</option>
+                                    <option value="C">1°C</option>
+                                    <option value="D">1°D</option>
+                                    <option value="E">1°E</option>
+                                    <option value="F">1°F</option>
+                                    <option value="G">1°G</option>
+                                    <option value="H">1°H</option>
                                     <!-- <option value="F">4°F</option> -->
                                 </select>
                             </div>
@@ -258,7 +285,7 @@
 
 
 
-       
+
 
         var envioUrl,
             ApellidoPaterno,
@@ -268,7 +295,11 @@
             Avatar,
             Equipo,
             Grupo,
-            ID;
+            ID,
+            Edad,
+            Sexo,
+            VAK;
+
         var ava2 = "";
         var array2 = [];
         var cuenta;
@@ -479,7 +510,7 @@
             }
             document.getElementById("avatarI").src = ava;
             document.getElementById("avatar2").src = ava2;
-            
+
 
         }
         var numero = function () {
@@ -543,10 +574,10 @@
 
         var enviarDatos = function () {
             var url =
-                "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
+                "https://script.google.com/macros/s/AKfycbytjShlTyE-y76mAM7591sbOIIkwZrb96YoyL8JE-tSa1v15yo5HzWV2fRZ5WNpHgwO/exec";
             /*  Equipo = "SinEquipo"; */
             envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
-                "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
+                "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID + "&eD=" + Edad + "&sX=" + Sexo + "&vak=" + VAK;
             /* envioUrl = envioUrl.trim(); */
             var obj1 = {
                 "ApellidoPaterno": ApellidoPaterno,
@@ -556,7 +587,10 @@
                 "Avatar": Avatar,
                 "Equipo": Equipo,
                 "Grupo": Grupo,
-                "ID": ID
+                "ID": ID,
+                "Edad": Edad,
+                "Sexo": Sexo,
+                "VAK": VAK
             };
             obj.items.push(obj1);
 
@@ -575,9 +609,12 @@
                 document.getElementById("Avatar").value === "" ||
                 document.getElementById("Equipo").value === "" ||
                 document.getElementById("Grupo").value === "" ||
-                document.getElementById("ID").value === "") {
+                document.getElementById("ID").value === "" ||
+                document.getElementById("Edad").value === "" ||
+                document.getElementById("Sexo").value === "" ||
+                document.getElementById("VAK").value === "") {
 
-                alert("llena los campos");
+                alert("Llena los campos");
 
             } else {
 
@@ -589,11 +626,14 @@
                 Equipo = document.getElementById("Equipo").value;
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
+                Edad = document.getElementById("Edad").value;
+                Sexo = document.getElementById("Sexo").value;
+                VAK = document.getElementById("VAK").value;
                 enviarDatos();
                 var iframe = document.createElement('iframe');
                 var html = '';
                 iframe.src = envioUrl;
-                document.getElementById("contenido").appendChild(iframe);
+                /* document.getElementById("contenido").appendChild(iframe); */
                 limpiarContenido(), 30000;
                 cuenta = cuenta + 1;
                 limpiar();
@@ -627,11 +667,16 @@
                                                 ${Nombre} ${ApellidoPaterno} ${ApellidoMaterno}
                                                 <img id="avatar2-2" width="20%" src="">
                                                 </h4>
+                                                Tu Avatar es:
+                                            <a href="#" class="nes-badge"> 
                                                <span class="is-dark ">
                                                 ${Avatar}</span>
+                                            </a>
                                         </center>
                                         
                                         <br> Tu Nombre de Usuario es: <a href="#" class="nes-badge"> <span class="is-dark">${Nick}</span></a>
+                                        <br> Tu Estilo de aprendizaje es: <a href="#" class="nes-badge"> <span class="is-dark">${VAK}</span></a>
+
                                         <br> Tu Nombre de Clan es: <a href="#" class="nes-badge"> <span class="is-dark">${Equipo}</span></a>
                                         <br> Tu Grupo es: <a href="#" class="nes-badge"> <span class="is-dark">${Grupo}</span></a>
                                         <br><br> Tu ID es: <a href="#" class="nes-badge"> <span class="is-dark">${ID}</span></a> <br> 
@@ -745,7 +790,10 @@
                 Avatar: "Avatar",
                 Equipo: "Equipo",
                 Grupo: "Grupo",
-                ID: "ID"
+                ID: "ID",
+                Edad: "Edad",
+                Sexo: "Sexo",
+                VAK: "VAK"
 
             };
 
@@ -761,7 +809,10 @@
                     Avatar: item.Avatar,
                     Equipo: item.Equipo,
                     Grupo: item.Grupo,
-                    ID: item.ID
+                    ID: item.ID,
+                    Edad: item.Edad,
+                    Sexo: item.Sexo,
+                    VAK: item.VAK
                 });
             });
             var fileTitle = 'lista';
