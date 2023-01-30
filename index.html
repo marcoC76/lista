@@ -110,19 +110,19 @@
                             <div class="nes-field is-inline">
                                 <label for="ApellidoPaterno">Apellido Paterno:</label>
                                 <input id="ApellidoPaterno" name="ApellidoPaterno" type="text" required
-                                    autocomplete="off" class="nes-input is-dark" placeholder="Sin espacios">
+                                    autocomplete="off" class="nes-input is-dark" placeholder="Sin espacios" maxlength="10">
                             </div>
                             <br>
                             <div class="nes-field is-inline">
                                 <label for="ApellidoMaterno">Apellido Materno:</label>
                                 <input id="ApellidoMaterno" name="ApellidoMaterno" type="text" required
-                                    autocomplete="off" class="nes-input is-dark" placeholder="Sin espacios">
+                                    autocomplete="off" class="nes-input is-dark" placeholder="Sin espacios" maxlength="10">
                             </div>
                             <br>
                             <div class="nes-field is-inline">
                                 <label for="Nombre">Nombre:</label>
                                 <input id="Nombre" name="Nombre" type="text" required autocomplete="off"
-                                    class="nes-input is-dark" placeholder="Sin espacios">
+                                    class="nes-input is-dark" placeholder="Sin espacios" maxlength="10">
                             </div>
                             <br>
                             <div class="nes-field is-inline">
@@ -201,12 +201,23 @@
                             <div class="nes-select is-dark">
                                 <select id="Grupo" required onchange="grupo(this.value)">
                                     <option value="" disabled selected>Escoge un grupo...</option>
-                                    <option value="A">1°A</option>
-                                    <option value="B">1°B</option>
-                                    <option value="C">1°C</option>
-                                    <option value="D">1°D</option>
-                                    <option value="G">1°G</option>
+                                    <option value="A">4°A</option>
+                                    <option value="B">4°B</option>
+                                    <option value="C">4°C</option>
+                                    <option value="D">4°D</option>
+                                    <option value="E">4°E</option>
                                     <!-- <option value="F">4°F</option> -->
+                                </select>
+                            </div>
+                            <br>
+                            <label for="VAK">Estilo de aprendizaje:</label>
+                            <div class="nes-select is-dark">
+                                <select id="VAK" required>
+                                    <option value="" disabled selected>Escoge un estilo...</option>
+                                    <option value="A">Auditivo</option>
+                                    <option value="K">Kinestesico</option>
+                                    <option value="V">Visual</option>
+                                    
                                 </select>
                             </div>
                             <br>
@@ -268,7 +279,8 @@
             Avatar,
             Equipo,
             Grupo,
-            ID;
+            ID,
+            VAK;
         var ava2 = "";
         var array2 = [];
         var cuenta;
@@ -542,11 +554,11 @@
         });
 
         var enviarDatos = function () {
+            
             var url =
-                "https://script.google.com/macros/s/AKfycbySgbPVH21U7WY1BD-UGuy36g7ZlJvEZtlQ80pTVPu00rguEZs/exec";
+                "https://script.google.com/macros/s/AKfycbxD9SWyAz4AuCRT2sBXbcfxXrKCbTrhuVseGJ9ir6bKllpuVyKKprOWENpnJoyM2pcZ/exec";
             /*  Equipo = "SinEquipo"; */
-            envioUrl = url + "?aP=" + ApellidoPaterno + "&aM=" + ApellidoMaterno + "&n=" + Nombre + "&nI=" + Nick +
-                "&a=" + Avatar + "&e=" + Equipo + "&g=" + Grupo + "&i=" + ID;
+            envioUrl = url + "?aP=" + encodeURIComponent(ApellidoPaterno) + "&aM=" + encodeURIComponent(ApellidoMaterno) + "&n=" + encodeURIComponent(Nombre) + "&nI=" + encodeURIComponent(Nick) + "&a=" + Avatar + "&e=" + encodeURIComponent(Equipo) + "&g=" + Grupo + "&i=" + ID + "&vak=" + VAK;
             /* envioUrl = envioUrl.trim(); */
             var obj1 = {
                 "ApellidoPaterno": ApellidoPaterno,
@@ -556,7 +568,8 @@
                 "Avatar": Avatar,
                 "Equipo": Equipo,
                 "Grupo": Grupo,
-                "ID": ID
+                "ID": ID,
+                "VAK": VAK
             };
             obj.items.push(obj1);
 
@@ -575,7 +588,8 @@
                 document.getElementById("Avatar").value === "" ||
                 document.getElementById("Equipo").value === "" ||
                 document.getElementById("Grupo").value === "" ||
-                document.getElementById("ID").value === "") {
+                document.getElementById("ID").value === ""||
+                document.getElementById("VAK").value === "") {
 
                 alert("llena los campos");
 
@@ -589,6 +603,7 @@
                 Equipo = document.getElementById("Equipo").value;
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
+                VAK = document.getElementById("VAK").value;
                 enviarDatos();
                 var iframe = document.createElement('iframe');
                 var html = '';
