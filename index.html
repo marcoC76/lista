@@ -128,6 +128,22 @@
                             </div>
                             <br>
                             <div class="nes-field is-inline">
+                                <label for="Edad">Edad:</label>
+                                <input id="Edad" name="Edad" type="number" required autocomplete="off"
+                                    class="nes-input is-dark" placeholder="Solo Numeros" maxlength="2">
+                            </div>
+                            <br>
+                            <label for="Sexo">Sexo:</label>
+                            <div class="nes-select is-dark">
+                                <select id="Sexo" required >
+                                    <option value="" disabled selected>Escoge un tu sexo...</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                    <option value="O">Otro</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="nes-field is-inline">
                                 <label for="Nick">Nombre de Usuario:</label>
                                 <input id="Nick" name="Nick" type="text" required autocomplete="off"
                                     class="nes-input is-dark" placeholder="Sin espacios" maxlength="10">
@@ -282,7 +298,9 @@
             Equipo,
             Grupo,
             ID,
-            VAK;
+            VAK,
+            Edad,
+            Sexo;
         var ava2 = "";
         var array2 = [];
         var cuenta;
@@ -558,9 +576,9 @@
         var enviarDatos = function () {
 
             var url =
-                "https://script.google.com/macros/s/AKfycbxD9SWyAz4AuCRT2sBXbcfxXrKCbTrhuVseGJ9ir6bKllpuVyKKprOWENpnJoyM2pcZ/exec";
+                "https://script.google.com/macros/s/AKfycbzmjYoBpO5BmBmL6IQSAVQbuGDEFc0MN5dSdmY-gV7O9MgoYSmnm2mm3Cu1zftlRXj-/exec";
             /*  Equipo = "SinEquipo"; */
-            envioUrl = url + "?aP=" + encodeURIComponent(ApellidoPaterno) + "&aM=" + encodeURIComponent(ApellidoMaterno) + "&n=" + encodeURIComponent(Nombre) + "&nI=" + encodeURIComponent(Nick) + "&a=" + Avatar + "&e=" + encodeURIComponent(Equipo) + "&g=" + Grupo + "&i=" + ID + "&vak=" + VAK;
+            envioUrl = url + "?aP=" + encodeURIComponent(ApellidoPaterno) + "&aM=" + encodeURIComponent(ApellidoMaterno) + "&n=" + encodeURIComponent(Nombre) + "&nI=" + encodeURIComponent(Nick) + "&a=" + Avatar + "&e=" + encodeURIComponent(Equipo) + "&g=" + Grupo + "&i=" + ID + "&vak=" + VAK + "&eD=" + Edad + "&s=" + Sexo;
             /* envioUrl = envioUrl.trim(); */
             var obj1 = {
                 "ApellidoPaterno": ApellidoPaterno,
@@ -571,7 +589,9 @@
                 "Equipo": Equipo,
                 "Grupo": Grupo,
                 "ID": ID,
-                "VAK": VAK
+                "VAK": VAK,
+                "Edad": Edad,
+                "Sexo" : Sexo
             };
             obj.items.push(obj1);
 
@@ -593,6 +613,8 @@
                 document.getElementById("Equipo").value === "" ||
                 document.getElementById("Grupo").value === "" ||
                 document.getElementById("ID").value === "" ||
+                document.getElementById("Edad").value === "" ||
+                document.getElementById("Sexo").value === "" ||
                 document.getElementById("VAK").value === "") {
 
                 alert("llena los campos");
@@ -608,6 +630,8 @@
                 Grupo = document.getElementById("Grupo").value;
                 ID = document.getElementById("ID").value;
                 VAK = document.getElementById("VAK").value;
+                Edad = document.getElementById("Edad").value;
+                Sexo = document.getElementById("Sexo").value;
                 enviarDatos();
                 var iframe = document.createElement('iframe');
                 var html = '';
