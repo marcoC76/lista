@@ -73,6 +73,13 @@
             -ms-user-select: none;
             user-select: none;
         }
+        #qrcode{
+        max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+        }
 
         @media (max-width: 600px) {
             .container {
@@ -686,7 +693,7 @@
                                             <span class="is-dark">Clic decho sobre el qr para guardar como imagen</span>
                                             <br>
                                             <br>
-                                            <div id="qrcode" style="width:300px; height:300px; "></div>
+                                            <div id="qrcode" ></div>
                                             <br>                                        
                                                     <a class="nes-btn is-primary" type="button" id='qrdl' hidden >Descargar</a>
                                         </center>
