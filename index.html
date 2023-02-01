@@ -688,7 +688,7 @@
                                             <br>
                                             <div id="qrcode" style="width:300px; height:300px; "></div>
                                             <br>                                        
-                                                    <a class="nes-btn is-primary" type="button" id='qrdl' hidden >Descargar</a>
+                                                    
                                         </center>
                                         
                                 </div>
@@ -717,14 +717,14 @@
 
                     qrcode.makeCode(elText.value);
 
-                    setTimeout(() => {
+                    /* setTimeout(() => {
                         let qelem = document.querySelector('#qrcode img')
                         let dlink = document.querySelector('#qrdl')
                         let qr = qelem.getAttribute('src');
                         dlink.setAttribute('href', qr);
                         dlink.setAttribute('download', 'filename');
                         dlink.removeAttribute('hidden');
-                    }, 500);
+                    }, 500); */
 
                 }
 
